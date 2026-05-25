@@ -51,7 +51,7 @@ const STATIC_RESOURCES = [
 ];
 
 // ─── State ────────────────────────────────────────────────────
-let map, markers = [], activeFilters = { snap: true, foodbank: true, meal: true, wic: true };
+let map, markers = [], markerGroup = null, activeFilters = { snap: true, foodbank: true, meal: true, wic: true };
 let selectedMiles = 2, allResults = [], activeCard = null, searchCenter = null;
 
 // ─── Init Map ─────────────────────────────────────────────────
@@ -60,6 +60,7 @@ function initMap() {
     center: CHARLOTTE_CENTER,
     zoom: 12,
     zoomControl: true,
+    preferCanvas: true,
   });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -207,13 +208,16 @@ async function doSearch() {
 
 // ─── Render Results ───────────────────────────────────────────
 function renderResults() {
+  window.requestAnimationFrame(renderResultsFrame);
+}
+
+function renderResultsFrame() {
   const visible = allResults.filter(r => activeFilters[r.type]);
   const list = document.getElementById('results-list');
   const placeholder = document.getElementById('results-placeholder');
 
   document.getElementById('results-count').textContent = `${visible.length} found`;
 
-  // Clear old markers
   clearMap();
 
   if (!visible.length) {
@@ -236,8 +240,10 @@ function renderResults() {
     window._centerMarker.addTo(map);
   }
 
+  const cardFragment = document.createDocumentFragment();
+  markerGroup = L.layerGroup();
+
   visible.forEach((r, i) => {
-    // Card
     const card = document.createElement('div');
     card.className = `result-card ${r.type}`;
     card.dataset.index = i;
@@ -250,20 +256,23 @@ function renderResults() {
       </div>
     `;
     card.addEventListener('click', () => selectResult(r, card));
-    list.appendChild(card);
+    cardFragment.appendChild(card);
 
-    // Marker
-    const marker = L.marker([r.lat, r.lon], { icon: makeIcon(r.type) })
-      .addTo(map)
-      .bindPopup(`<strong>${r.name}</strong><br>${r.address}`);
+    const marker = L.marker([r.lat, r.lon], { icon: makeIcon(r.type) }).bindPopup(
+      `<strong>${r.name}</strong><br>${r.address}`
+    );
 
     marker.on('click', () => {
       selectResult(r, card);
       card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 
+    markerGroup.addLayer(marker);
     markers.push(marker);
   });
+
+  list.appendChild(cardFragment);
+  markerGroup.addTo(map);
 
   updateStats(visible);
   document.getElementById('stats-bar').classList.remove('hidden');
@@ -319,7 +328,10 @@ function updateStats(visible) {
 
 // ─── Clear Map ────────────────────────────────────────────────
 function clearMap() {
-  markers.forEach(m => map.removeLayer(m));
+  if (markerGroup) {
+    map.removeLayer(markerGroup);
+    markerGroup = null;
+  }
   markers = [];
 }
 
