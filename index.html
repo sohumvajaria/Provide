@@ -3,135 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charlotte Food Access</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Provide — Food Access Map</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="page-home">
 
-  <div id="app">
+  <section id="hero" aria-label="Provide home">
+    <nav id="hero-nav">
+      <a href="index.html" class="nav-logo">PROVIDE</a>
+      <div class="nav-actions">
+        <a href="index.html#hero" class="nav-link">About</a>
+        <a href="explorer.html" class="nav-btn">Explorer</a>
+      </div>
+    </nav>
 
-    <!-- Sidebar -->
-    <aside id="sidebar">
-      <div id="sidebar-header">
-        <div id="logo-mark">&#9632;</div>
-        <div id="logo-text">
-          <span class="logo-title">Charlotte</span>
-          <span class="logo-sub">Food Access</span>
-        </div>
+    <div id="hero-inner">
+      <div id="hero-copy">
+        <p class="hero-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          PROVIDE · v1 · Food access, mapped
+        </p>
+        <h1
+          id="hero-title"
+          class="hero-title is-loading"
+          data-provide-title
+          data-draw-on="load"
+          data-font-size="128"
+          aria-label="Provide"
+        >
+          <span class="hero-title-fallback">Provide</span>
+          <svg class="hero-title-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g class="hero-title-fills"></g>
+            <g class="hero-title-strokes"></g>
+          </svg>
+        </h1>
+        <p class="hero-subtitle">
+          Communities deserve to know what’s nearby.
+          <strong>Find SNAP retailers, food banks, free meals, and WIC</strong> — starting in Charlotte, expanding nationwide.
+        </p>
+        <a href="explorer.html" class="hero-cta">Explore the dashboard →</a>
       </div>
 
-      <div id="search-section">
-        <label class="field-label">ZIP CODE</label>
-        <div id="zip-row">
-          <input id="zip-input" type="text" maxlength="5" placeholder="e.g. 28202" />
-          <button id="search-btn">Find</button>
-        </div>
-        <div id="radius-row">
-          <label class="field-label">RADIUS</label>
-          <div id="radius-options">
-            <button class="radius-btn active" data-miles="2">2 mi</button>
-            <button class="radius-btn" data-miles="5">5 mi</button>
-            <button class="radius-btn" data-miles="10">10 mi</button>
-          </div>
-        </div>
-      </div>
-
-      <div id="filter-section">
-        <label class="field-label">SHOW</label>
-        <div id="filters">
-          <label class="filter-item">
-            <input type="checkbox" class="filter-cb" data-type="snap" checked />
-            <span class="filter-dot snap-dot"></span>
-            SNAP Retailers
-          </label>
-          <label class="filter-item">
-            <input type="checkbox" class="filter-cb" data-type="foodbank" checked />
-            <span class="filter-dot foodbank-dot"></span>
-            Food Banks
-          </label>
-          <label class="filter-item">
-            <input type="checkbox" class="filter-cb" data-type="meal" checked />
-            <span class="filter-dot meal-dot"></span>
-            Free Meals
-          </label>
-          <label class="filter-item">
-            <input type="checkbox" class="filter-cb" data-type="wic" checked />
-            <span class="filter-dot wic-dot"></span>
-            WIC Locations
-          </label>
-        </div>
-      </div>
-
-      <div id="results-section">
-        <div id="results-header">
-          <span class="field-label">RESULTS</span>
-          <span id="results-count">—</span>
-        </div>
-        <div id="results-list">
-          <div id="results-placeholder">
-            <p>Enter a ZIP code to find food resources near you.</p>
-          </div>
-        </div>
-      </div>
-
-      <div id="sidebar-footer">
-        <p>Data: USDA FNS &middot; Feeding America &middot; CMS &middot; OSM</p>
-        <p>Built for Rep. Alma Adams &middot; NC-12</p>
-      </div>
-    </aside>
-
-    <!-- Map -->
-    <div id="map-container">
-      <div id="map"></div>
-
-      <!-- Detail Panel -->
-      <div id="detail-panel" class="hidden">
-        <button id="detail-close">&times;</button>
-        <div id="detail-type-badge"></div>
-        <h2 id="detail-name"></h2>
-        <p id="detail-address"></p>
-        <div id="detail-meta"></div>
-        <div id="detail-actions"></div>
-      </div>
-
-      <!-- Loading overlay -->
-      <div id="loading-overlay" class="hidden">
-        <div id="loading-inner">
-          <div id="loading-spinner"></div>
-          <p id="loading-text">Finding resources...</p>
-        </div>
-      </div>
-
-      <!-- Stats bar -->
-      <div id="stats-bar" class="hidden">
-        <div class="stat-item" id="stat-snap">
-          <span class="stat-num">0</span>
-          <span class="stat-label">SNAP</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item" id="stat-foodbank">
-          <span class="stat-num">0</span>
-          <span class="stat-label">Food Banks</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item" id="stat-meal">
-          <span class="stat-num">0</span>
-          <span class="stat-label">Free Meals</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item" id="stat-wic">
-          <span class="stat-num">0</span>
-          <span class="stat-label">WIC</span>
-        </div>
+      <div id="hero-map-wrap">
+        <div id="hero-map" aria-live="polite"></div>
+        <div class="hero-map-glow" aria-hidden="true"></div>
       </div>
     </div>
 
-  </div>
+    <a href="#stats" class="hero-scroll" aria-label="Scroll to statistics">
+      <span class="hero-scroll-line"></span>
+      <span class="hero-scroll-label">SCROLL</span>
+    </a>
+  </section>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js"></script>
+  <section id="stats" class="home-stats" data-stat-section aria-label="Food access statistics">
+    <div class="home-stats-inner">
+      <article class="home-stat">
+        <p class="home-stat-value" aria-live="polite">
+          <span class="stat-counter" data-value="41" data-suffix="M+" data-decimals="0">0</span>
+        </p>
+        <p class="home-stat-caption">
+          Americans who rely on SNAP each month to buy groceries
+        </p>
+      </article>
+
+      <article class="home-stat home-stat--accent">
+        <p class="home-stat-value" aria-live="polite">
+          <span class="stat-counter" data-value="13.5" data-suffix="%" data-decimals="1">0</span>
+        </p>
+        <p class="home-stat-caption">
+          of U.S. households were food insecure in 2023
+        </p>
+      </article>
+
+      <article class="home-stat">
+        <p class="home-stat-value" aria-live="polite">
+          <span class="stat-counter" data-value="23" data-suffix="M" data-decimals="0">0</span>
+        </p>
+        <p class="home-stat-caption">
+          people live in low-income areas with limited grocery access
+        </p>
+      </article>
+    </div>
+    <p class="home-stats-source">Sources: USDA Economic Research Service · USDA FNS</p>
+  </section>
+
+  <section id="how-it-works" class="home-how" aria-labelledby="how-it-works-title">
+    <div class="home-how-inner">
+      <header class="home-how-header">
+        <p class="home-how-eyebrow">HOW PROVIDE WORKS</p>
+        <h2 id="how-it-works-title" class="home-how-title">
+          From ZIP code<br />to food on the table.
+        </h2>
+      </header>
+
+      <div class="home-how-grid">
+        <article class="home-how-step">
+          <div class="home-how-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M17 17L24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M12 9V15M9 12H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="home-how-step-label">01 — Search</p>
+          <h3 class="home-how-step-title">ZIP Discovery</h3>
+          <p class="home-how-step-text">
+            Enter a ZIP code and we geocode your area, centering the map on your neighborhood so search starts where you actually live.
+          </p>
+        </article>
+
+        <article class="home-how-step">
+          <div class="home-how-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20L10 14L14 18L20 10L24 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="19" cy="7" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="3" y="3" width="22" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <p class="home-how-step-label">02 — Explore</p>
+          <h3 class="home-how-step-title">Live Resource Map</h3>
+          <p class="home-how-step-text">
+            SNAP retailers, food banks, free meal sites, and WIC locations appear on the map — filter by type and adjust radius to see what is nearby.
+          </p>
+        </article>
+
+        <article class="home-how-step">
+          <div class="home-how-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 22H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 18L14 8L20 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="14" cy="6" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <p class="home-how-step-label">03 — Act</p>
+          <h3 class="home-how-step-title">Resources at Hand</h3>
+          <p class="home-how-step-text">
+            Compare distance, hours, and contact details for each location — then open directions or call directly from the dashboard.
+          </p>
+        </article>
+      </div>
+
+      <p class="home-how-cta-wrap">
+        <a href="explorer.html" class="home-how-cta">Open the explorer →</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="map-preview" class="home-preview" aria-labelledby="map-preview-title">
+    <div class="home-preview-inner">
+      <header class="home-preview-header">
+        <p class="home-preview-eyebrow">LIVE PREVIEW</p>
+        <h2 id="map-preview-title" class="home-preview-title">
+          Every ZIP. Every site.<br />All in one view.
+        </h2>
+        <p class="home-preview-sub">
+          Charlotte-area resources · SNAP · Food banks · Free meals · WIC
+        </p>
+      </header>
+      <div id="map-preview-mount" class="home-preview-mount" aria-label="Explorer map placeholder"></div>
+    </div>
+  </section>
+
+  <section id="reach" class="home-reach" data-stat-section aria-label="Provide reach statistics">
+    <div class="home-reach-inner">
+      <p class="home-reach-eyebrow">FOOD ACCESS REACH</p>
+      <div class="home-reach-grid">
+        <article class="home-reach-stat">
+          <p class="home-reach-value" aria-live="polite">
+            <span class="stat-counter" data-value="42" data-suffix="+" data-decimals="0">0</span>
+          </p>
+          <p class="home-reach-caption">Verified resources in the Charlotte pilot dataset</p>
+        </article>
+        <article class="home-reach-stat">
+          <p class="home-reach-value" aria-live="polite">
+            <span class="stat-counter" data-value="4" data-decimals="0">0</span>
+          </p>
+          <p class="home-reach-caption">Program types mapped in the explorer</p>
+        </article>
+        <article class="home-reach-stat home-reach-stat--text">
+          <p class="home-reach-value home-reach-value--label" aria-live="polite">
+            <span class="stat-counter" data-value="10" data-suffix=" mi" data-decimals="0">0</span>
+          </p>
+          <p class="home-reach-caption">Maximum search radius from any ZIP</p>
+        </article>
+      </div>
+      <div class="home-reach-ticker" aria-hidden="true">
+        <div class="home-reach-ticker-track">
+          <span>Charlotte, NC</span><span>28202</span><span>28206</span><span>28208</span><span>28205</span>
+          <span>Mecklenburg County</span><span>SNAP</span><span>WIC</span><span>Food banks</span><span>Free meals</span>
+          <span>Charlotte, NC</span><span>28202</span><span>28206</span><span>28208</span><span>28205</span>
+          <span>Mecklenburg County</span><span>SNAP</span><span>WIC</span><span>Food banks</span><span>Free meals</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="closing" class="home-closing" aria-label="Provide closing">
+    <div class="home-closing-inner">
+      <h2
+        id="closing-title"
+        class="hero-title hero-title--closing is-loading"
+        data-provide-title
+        data-draw-on="scroll"
+        data-font-size="152"
+        aria-label="Provide"
+      >
+        <span class="hero-title-fallback">Provide</span>
+        <svg class="hero-title-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g class="hero-title-fills"></g>
+          <g class="hero-title-strokes"></g>
+        </svg>
+      </h2>
+      <p class="home-closing-tagline">Food access intelligence. Local today. Nationwide tomorrow.</p>
+      <a href="explorer.html" class="home-closing-cta">Explore the dashboard →</a>
+      <p class="home-closing-footer">Built for the Congressional App Challenge · NC-12 · Rep. Alma Adams</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="hero-title.js"></script>
+  <script src="hero-map.js"></script>
+  <script src="stats.js"></script>
+  <script src="map-preview.js"></script>
 </body>
 </html>
