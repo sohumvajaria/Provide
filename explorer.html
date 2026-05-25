@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="page-explorer">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorer — Provide</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-explorer">
+
+  <div id="app">
+
+    <aside id="sidebar">
+      <div id="sidebar-header">
+        <a href="index.html" class="sidebar-home-link">
+          <div id="logo-mark">P</div>
+          <div id="logo-text">
+            <span class="logo-title">Provide</span>
+            <span class="logo-sub">Food Access</span>
+          </div>
+        </a>
+      </div>
+
+      <div id="search-section">
+        <label class="field-label" for="zip-input">ZIP CODE</label>
+        <div id="zip-row">
+          <input id="zip-input" type="text" maxlength="5" placeholder="e.g. 28202" />
+          <button id="search-btn" type="button">Find</button>
+        </div>
+        <div id="radius-row">
+          <label class="field-label">RADIUS</label>
+          <div id="radius-options">
+            <button class="radius-btn active" type="button" data-miles="2">2 mi</button>
+            <button class="radius-btn" type="button" data-miles="5">5 mi</button>
+            <button class="radius-btn" type="button" data-miles="10">10 mi</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="filter-section">
+        <label class="field-label">SHOW</label>
+        <div id="filters">
+          <label class="filter-item">
+            <input type="checkbox" class="filter-cb" data-type="snap" checked />
+            <span class="filter-dot snap-dot"></span>
+            SNAP Retailers
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" class="filter-cb" data-type="foodbank" checked />
+            <span class="filter-dot foodbank-dot"></span>
+            Food Banks
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" class="filter-cb" data-type="meal" checked />
+            <span class="filter-dot meal-dot"></span>
+            Free Meals
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" class="filter-cb" data-type="wic" checked />
+            <span class="filter-dot wic-dot"></span>
+            WIC Locations
+          </label>
+        </div>
+      </div>
+
+      <div id="results-section">
+        <div id="results-header">
+          <span class="field-label">RESULTS</span>
+          <span id="results-count">—</span>
+        </div>
+        <div id="results-list">
+          <div id="results-placeholder">
+            <p>Enter a ZIP code to find food resources near you.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="sidebar-footer">
+        <p>Data: USDA FNS · Feeding America · CMS · OSM</p>
+        <p>Built for Rep. Alma Adams · NC-12</p>
+      </div>
+    </aside>
+
+    <div id="map-container">
+      <div id="map"></div>
+
+      <div id="detail-panel" class="hidden">
+        <button id="detail-close" type="button" aria-label="Close details">&times;</button>
+        <div id="detail-type-badge"></div>
+        <h2 id="detail-name"></h2>
+        <p id="detail-address"></p>
+        <div id="detail-meta"></div>
+        <div id="detail-actions"></div>
+      </div>
+
+      <div id="loading-overlay" class="hidden">
+        <div id="loading-inner">
+          <div id="loading-spinner"></div>
+          <p id="loading-text">Finding resources...</p>
+        </div>
+      </div>
+
+      <div id="stats-bar" class="hidden">
+        <div class="stat-item" id="stat-snap">
+          <span class="stat-num">0</span>
+          <span class="stat-label">SNAP</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-foodbank">
+          <span class="stat-num">0</span>
+          <span class="stat-label">Food Banks</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-meal">
+          <span class="stat-num">0</span>
+          <span class="stat-label">Free Meals</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-wic">
+          <span class="stat-num">0</span>
+          <span class="stat-label">WIC</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
