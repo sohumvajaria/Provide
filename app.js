@@ -4,7 +4,7 @@ const CHARLOTTE_ZIP_BOUNDS = { lat: [34.9, 35.55], lon: [-81.3, -80.5] };
 
 const TYPE_CONFIG = {
   snap:     { label: 'SNAP Retailer',  color: '#4ade80', badgeClass: 'badge-snap',     markerClass: 'marker-snap' },
-  foodbank: { label: 'Food Bank',      color: '#f97316', badgeClass: 'badge-foodbank', markerClass: 'marker-foodbank' },
+  foodbank: { label: 'Food Bank',      color: '#40916c', badgeClass: 'badge-foodbank', markerClass: 'marker-foodbank' },
   meal:     { label: 'Free Meals',     color: '#38bdf8', badgeClass: 'badge-meal',     markerClass: 'marker-meal' },
   wic:      { label: 'WIC Location',   color: '#c084fc', badgeClass: 'badge-wic',      markerClass: 'marker-wic' },
 };
@@ -166,18 +166,18 @@ async function doSearch() {
   if (window._radiusCircle) map.removeLayer(window._radiusCircle);
   window._radiusCircle = L.circle([center.lat, center.lon], {
     radius: selectedMiles * 1609.34,
-    color: '#e8c547',
+    color: '#2d6a4f',
     weight: 1,
-    fillColor: '#e8c547',
-    fillOpacity: 0.04,
+    fillColor: '#40916c',
+    fillOpacity: 0.08,
   }).addTo(map);
 
   // Center marker
   if (window._centerMarker) map.removeLayer(window._centerMarker);
   window._centerMarker = L.circleMarker([center.lat, center.lon], {
     radius: 6,
-    color: '#e8c547',
-    fillColor: '#e8c547',
+    color: '#2d6a4f',
+    fillColor: '#40916c',
     fillOpacity: 1,
     weight: 2,
   }).addTo(map).bindPopup(`<strong>ZIP ${zip}</strong><br>Your search center`);
