@@ -32,6 +32,19 @@ const NC211_QUERY_ZIPS = [
   { zip: '28144', label: 'Salisbury' },
   { zip: '28115', label: 'Mooresville' },
   { zip: '28025', label: 'Concord' },
+  // Rural NC hubs — coverage for underserved counties
+  { zip: '28358', label: 'Lumberton (Robeson County)' },
+  { zip: '27870', label: 'Roanoke Rapids (Halifax County)' },
+  { zip: '27893', label: 'Wilson (Wilson County)' },
+  { zip: '28501', label: 'Kinston (Lenoir County)' },
+  { zip: '27288', label: 'Eden (Rockingham County)' },
+  { zip: '27292', label: 'Lexington (Davidson County)' },
+  { zip: '28655', label: 'Morganton (Burke County)' },
+  { zip: '28334', label: 'Dunn (Harnett County)' },
+  { zip: '28374', label: 'Pinehurst (Moore County)' },
+  { zip: '27909', label: 'Elizabeth City' },
+  { zip: '28607', label: 'Boone' },
+  { zip: '28540', label: 'Jacksonville' },
 ];
 
 function sleep(ms) {
