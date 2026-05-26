@@ -1,0 +1,3575 @@
+[
+  {
+    "nc211LocationId": "211northca-97209118",
+    "name": "FOOD PANTRY AT CHARLOTTE CALVARY",
+    "lat": 35.21455,
+    "lng": -80.75481,
+    "address": "4000 North Sharon Amity, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67507129",
+    "name": "IF MY PEOPLE FOOD PANTRY",
+    "lat": 35.2536,
+    "lng": -80.82777,
+    "address": "2511 Lucena Street, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67506862",
+    "name": "HOPE STREET FOOD PANTRY",
+    "lat": 35.3658,
+    "lng": -80.77389,
+    "address": "4100 Johnston Oehler Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376182",
+    "name": "ST. PAUL BAPTIST CHURCH EMERGENCY FOOD PANTRY",
+    "lat": 35.23042,
+    "lng": -80.81779,
+    "address": "1401 Allen Street, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376358",
+    "name": "DILWORTH SOUP KITCHEN AND FOOD PANTRY",
+    "lat": 35.2032,
+    "lng": -80.84679,
+    "address": "1200 East Boulevard, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-72817589",
+    "name": "HEARTS AND HANDS FOOD PANTRY",
+    "lat": 35.27476,
+    "lng": -80.87203,
+    "address": "4040 Chesapeake Drive, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-86666895",
+    "name": "HOPE STREET FOOD PANTRY",
+    "lat": 35.3329,
+    "lng": -80.79642,
+    "address": "Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375421",
+    "name": "CLIENT CHOICE FOOD PANTRY",
+    "lat": 35.24257,
+    "lng": -80.83312,
+    "address": "1514 North Graham Street, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376213",
+    "name": "LIBERTY BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.25238,
+    "lng": -80.98382,
+    "address": "3000 Sam Wilson Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97209249",
+    "name": "FOOD PANTRY",
+    "lat": 35.18714,
+    "lng": -80.73106,
+    "address": "7841 Idlewild Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97209280",
+    "name": "DISCIPLES FOOD PANTRY",
+    "lat": 35.31092,
+    "lng": -80.83669,
+    "address": "6440 Old Statesville Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96035569",
+    "name": "EMPLOYMENT AND TRAINING",
+    "lat": 35.13102,
+    "lng": -80.91606,
+    "address": "9731 Southern Pine Boulevard, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97209219",
+    "name": "FOOD PANTRY",
+    "lat": 35.21871,
+    "lng": -80.72308,
+    "address": "7424 East W. T. Harris Boulevard, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67507714",
+    "name": "FOOD PANTRY",
+    "lat": 35.17767,
+    "lng": -80.78004,
+    "address": "1148 North Sharon Amity Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97209303",
+    "name": "FOOD PANTRY",
+    "lat": 35.1332,
+    "lng": -80.89833,
+    "address": "501 West Arrowood Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375694",
+    "name": "FOOD PANTRY",
+    "lat": 35.27519,
+    "lng": -80.94315,
+    "address": "8245 Moores Chapel Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97306073",
+    "name": "FOOD PANTRY",
+    "lat": 35.24577,
+    "lng": -80.77997,
+    "address": "835 Eastway Drive, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97493687",
+    "name": "FOOD PANTRY",
+    "lat": 35.28772,
+    "lng": -81.01808,
+    "address": "2120 Spring Street, Mount Holly, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376149",
+    "name": "FOOD PANTRY",
+    "lat": 35.20877,
+    "lng": -80.97948,
+    "address": "5125 Mt Olive Church Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67544040",
+    "name": "EMERGENCY FOOD PANTRY",
+    "lat": 35.18768,
+    "lng": -80.68768,
+    "address": "9229 Lawyers Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97521117",
+    "name": "FOOD PANTRY",
+    "lat": 35.32019,
+    "lng": -80.86331,
+    "address": "6230 Beatties Ford Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67507778",
+    "name": "FOOD PANTRY",
+    "lat": 35.26199,
+    "lng": -80.8832,
+    "address": "3900 Gossett Avenue, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97209078",
+    "name": "FEED MY SHEEP FOOD PANTRY",
+    "lat": 35.21601,
+    "lng": -80.74582,
+    "address": "6116 Vernedale Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376389",
+    "name": "FOOD FARMACY",
+    "lat": 35.28815,
+    "lng": -80.7616,
+    "address": "133 Stetson Drive, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-92492253",
+    "name": "PANTRY SERVICES",
+    "lat": 35.18572,
+    "lng": -80.74984,
+    "address": "6701 Idlewild Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375905",
+    "name": "HARRISBURG CRISIS ASSISTANCE MINISTRY",
+    "lat": 35.30774,
+    "lng": -80.59813,
+    "address": "7940 Rocky River Road, Concord, NC, Cabarrus",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375471",
+    "name": "SUPPLEMENTAL STAPLES PROGRAM",
+    "lat": 35.11865,
+    "lng": -80.72451,
+    "address": "119 North Ames Street, Matthews, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97520198",
+    "name": "DESTINED TO MAKE IT",
+    "lat": 35.26389,
+    "lng": -80.78366,
+    "address": "4925 Springview Road, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377678",
+    "name": "SERVING OUR COMMUNITY WITH KINDNESS IN SPRINGWOOD",
+    "lat": 35.26706,
+    "lng": -81.04428,
+    "address": "160 Woodlawn Avenue, Belmont, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-72379457",
+    "name": "PINEVILLE NEIGHBORS PLACE",
+    "lat": 35.09085,
+    "lng": -80.88708,
+    "address": "561 North Polk Street, Pineville, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67934858",
+    "name": "UNIVERSITY SOUP KITCHEN",
+    "lat": 35.32494,
+    "lng": -80.74022,
+    "address": "Multiple Locations, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-95949070",
+    "name": "PATHWAYS TO EMPLOYABILITY",
+    "lat": 35.13102,
+    "lng": -80.91606,
+    "address": "9731 Southern Pine Boulevard, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97663968",
+    "name": "GOOD FRIENDS CHARLOTTE",
+    "lat": 35.20944,
+    "lng": -80.83562,
+    "address": "601 South Kings Drive, Charlotte, NC, Mecklenburg",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97211187",
+    "name": "FIRST UNITED METHODIST CHURCH ON COMMON GROUND FOOD PANTRY",
+    "lat": 35.34293,
+    "lng": -81.09474,
+    "address": "5481 Hickory Grove Road, Stanley, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376238",
+    "name": "CABARRUS DREAM CENTER",
+    "lat": 35.39943,
+    "lng": -80.61082,
+    "address": "280 Concord Parkway South, Concord, NC, Cabarrus",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-66840944",
+    "name": "FOOD PANTRY",
+    "lat": 35.34295,
+    "lng": -81.09471,
+    "address": "5481 Hickory Grove Road, Stanley, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67542761",
+    "name": "LAKE NORMAN FOOD MISSION",
+    "lat": 35.50454,
+    "lng": -81.00345,
+    "address": "7501 Hagers Hollow Drive, Denver, NC, Lincoln",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97493714",
+    "name": "BOUNTIFUL BLESSINGS FOOD PANTRY",
+    "lat": 35.26717,
+    "lng": -81.22366,
+    "address": "2311 Crescent Lane, Gastonia, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380105",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.23302,
+    "lng": -80.42753,
+    "address": "100 South Love Chapel Road, Stanfield, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96429241",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.27505,
+    "lng": -80.41127,
+    "address": "Jeff Shelton Drive, Locust, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96402305",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.25537,
+    "lng": -80.4535,
+    "address": "102 Stanly Parkway, Locust, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375212",
+    "name": "DRIVE-THRU FOOD PANTRY",
+    "lat": 34.98854,
+    "lng": -80.54751,
+    "address": "160 Meadow Street, Monroe, NC, Union",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96426998",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.25623,
+    "lng": -80.43218,
+    "address": "607 West Main Street, Locust, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375774",
+    "name": "JOSEPH'S PANTRY",
+    "lat": 34.99367,
+    "lng": -80.54659,
+    "address": "1308 Miller Street, Monroe, NC, Union",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375713",
+    "name": "FOOD ASSISTANCE",
+    "lat": 35.44469,
+    "lng": -80.60278,
+    "address": "246 Country Club Drive Northeast, Concord, NC, Cabarrus",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97565917",
+    "name": "KANNAPOLIS FOOD PANTRY AND JOSEPH'S CLOSET",
+    "lat": 35.49789,
+    "lng": -80.64011,
+    "address": "1100 Pine Street, Kannapolis, NC, Cabarrus",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377679",
+    "name": "FOOD AND CLOTHING",
+    "lat": 35.24508,
+    "lng": -81.17009,
+    "address": "1506 Union Rd, Gastonia, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-92804071",
+    "name": "HEARTS N CARTS",
+    "lat": 35.2472,
+    "lng": -81.13489,
+    "address": "2908 Audrey Drive, Gastonia, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-82418432",
+    "name": "OPERATION BREADBASKET",
+    "lat": 35.4041,
+    "lng": -80.5778,
+    "address": "59 Chestnut Drive Southwest, Concord, NC, Cabarrus",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375533",
+    "name": "BAPTIST SHARING HOUSE",
+    "lat": 35.41716,
+    "lng": -80.59363,
+    "address": "117 Peachtree Avenue, Concord, NC, Cabarrus",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-94438926",
+    "name": "BREAD",
+    "lat": 35.2105,
+    "lng": -81.20216,
+    "address": "3803 Old York Road, Gastonia, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377614",
+    "name": "CRISIS ASSISTANCE MINISTRY",
+    "lat": 35.26525,
+    "lng": -81.19453,
+    "address": "805 West Airline Avenue, Gastonia, NC, Gaston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38375544",
+    "name": "HUMANE SOCIETY - UNION COUNTY",
+    "lat": 34.95885,
+    "lng": -80.62506,
+    "address": "4015 Waxhaw Highway, Monroe, NC, Union",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382275",
+    "name": "TRI-AREA MINISTRY FOOD PANTRY",
+    "lat": 35.97207,
+    "lng": -78.51334,
+    "address": "149 East Holding Avenue, Wake Forest, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382211",
+    "name": "FAITH CITY CHURCH FOOD PANTRY",
+    "lat": 35.64331,
+    "lng": -78.48817,
+    "address": "581 Guy Road, Clayton, NC, Johnston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382208",
+    "name": "SAMARITAN'S SHELF FOOD PANTRY",
+    "lat": 35.63353,
+    "lng": -78.49213,
+    "address": "143 Short Johnson Road, Clayton, NC, Johnston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382210",
+    "name": "FEED MY SHEEP FOOD PANTRY",
+    "lat": 35.64656,
+    "lng": -78.49122,
+    "address": "1082 Amelia Church Road, Clayton, NC, Johnston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381261",
+    "name": "UPPER ROOM CHURCH OF GOD IN CHRIST FOOD PANTRY",
+    "lat": 35.73752,
+    "lng": -78.6178,
+    "address": "3300 Idlewood Village Drive, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381074",
+    "name": "MOBILE MARKETS",
+    "lat": 35.76929,
+    "lng": -78.66592,
+    "address": "1001 Blair Drive, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382236",
+    "name": "HOLLY SPRINGS FOOD CUPBOARD",
+    "lat": 35.65538,
+    "lng": -78.84276,
+    "address": "621 West Holly Springs Road, Holly Springs, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381050",
+    "name": "FOOD PANTRY",
+    "lat": 35.70823,
+    "lng": -78.61926,
+    "address": "558 Village Court, Garner, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382260",
+    "name": "COMUNIDAD CRISTIANA HOSANNA FOOD PANTRY",
+    "lat": 35.74068,
+    "lng": -78.6376,
+    "address": "204 Shelden Drive, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381318",
+    "name": "WENDELL BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.78483,
+    "lng": -78.36896,
+    "address": "3651 Wendell Boulevard, Wendell, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382207",
+    "name": "CLAYTON AREA MINISTRIES FOOD PANTRY",
+    "lat": 35.63968,
+    "lng": -78.45952,
+    "address": "780 Durham Street, Clayton, NC, Johnston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382276",
+    "name": "UNIVERSAL OUTREACH FOOD PANTRY",
+    "lat": 35.88848,
+    "lng": -78.47884,
+    "address": "4912 Universal Drive, Wake Forest, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382231",
+    "name": "CAPITAL CHURCH FOOD PANTRY",
+    "lat": 35.72099,
+    "lng": -78.64019,
+    "address": "1308 Us Highway 70 West, Garner, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382230",
+    "name": "NEW PROVIDENCE MISSIONARY BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.63139,
+    "lng": -78.74629,
+    "address": "4813 Hilltop Needmore Road, Fuquay Varina, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381919",
+    "name": "WENDELL UNITED METHODIST CHURCH FOOD PANTRY",
+    "lat": 35.78412,
+    "lng": -78.36994,
+    "address": "129 North Main Street, Wendell, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382266",
+    "name": "OPEN DOOR CHURCH FOOD PANTRY",
+    "lat": 35.89937,
+    "lng": -78.5787,
+    "address": "9801 Durant Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382313",
+    "name": "HOPE COMMUNITY CHURCH FOOD PANTRY",
+    "lat": 35.77063,
+    "lng": -78.73676,
+    "address": "821 Buck Jones Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382247",
+    "name": "POPLAR SPRINGS CHRISTIAN CHURCH FOOD PANTRY",
+    "lat": 35.69549,
+    "lng": -78.65238,
+    "address": "6115 Old Stage Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96497121",
+    "name": "FOOD CUPBOARD",
+    "lat": 35.65538,
+    "lng": -78.84276,
+    "address": "621 West Holly Springs Road, Holly Springs, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382267",
+    "name": "NEW FREEDOM CHRISTIAN FELLOWSHIP FOOD PANTRY",
+    "lat": 35.79626,
+    "lng": -78.5816,
+    "address": "3540 Maitland Drive, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382270",
+    "name": "CRABTREE VALLEY BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.84051,
+    "lng": -78.67327,
+    "address": "4408 Lead Mine Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382264",
+    "name": "MILLBROOK UNITED METHODIST CHURCH FOOD PANTRY",
+    "lat": 35.84954,
+    "lng": -78.60748,
+    "address": "1712 East Millbrook Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-73393093",
+    "name": "SHOWERS OF BLESSING COMMUNITY CHURCH FOOD PANTRY",
+    "lat": 35.57364,
+    "lng": -78.53957,
+    "address": "9759 Cleveland Road, Clayton, NC, Johnston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96496797",
+    "name": "FOOD PANTRY",
+    "lat": 35.62945,
+    "lng": -78.71894,
+    "address": "5309 Umstead Road, Fuquay Varina, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382312",
+    "name": "FOOD PANTRY",
+    "lat": 35.85007,
+    "lng": -78.58415,
+    "address": "2809 East Millbrook Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381222",
+    "name": "FOOD PANTRY",
+    "lat": 35.80705,
+    "lng": -78.61704,
+    "address": "1863 Capital Boulevard, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381262",
+    "name": "FOOD PANTRY",
+    "lat": 35.79919,
+    "lng": -78.63501,
+    "address": "1390 Capital Boulevard, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96498189",
+    "name": "FOOD PANTRY",
+    "lat": 35.79705,
+    "lng": -78.46947,
+    "address": "494 Knightdale Station Run, Knightdale, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382233",
+    "name": "FOOD PANTRY",
+    "lat": 35.70308,
+    "lng": -78.6132,
+    "address": "601 Saint Mary's Street, Garner, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96498207",
+    "name": "FOOD PANTRY",
+    "lat": 35.71115,
+    "lng": -78.61317,
+    "address": "2110 State Road 2710, Garner, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96498171",
+    "name": "FOOD PANTRY",
+    "lat": 35.76113,
+    "lng": -78.61448,
+    "address": "1436 Rock Quarry Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96497446",
+    "name": "MOBILE FOOD PANTRY",
+    "lat": 35.8431,
+    "lng": -78.57473,
+    "address": "4301 Louisburg Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380910",
+    "name": "FOOD PANTRY",
+    "lat": 35.81674,
+    "lng": -78.60524,
+    "address": "3109 Poplar Wood Court, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381320",
+    "name": "HOME DELIVERY",
+    "lat": 35.73768,
+    "lng": -78.89051,
+    "address": "1600 Olive Chapel Road, Apex, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382241",
+    "name": "FOOD AND CLOTHING PANTRY",
+    "lat": 35.80891,
+    "lng": -78.60356,
+    "address": "2013 Raleigh Boulevard, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382107",
+    "name": "NEIGHBORUP PANTRY",
+    "lat": 35.78189,
+    "lng": -78.79876,
+    "address": "189 High House Road, Cary, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97007363",
+    "name": "NEIGHBORUP PANTRY",
+    "lat": 35.73768,
+    "lng": -78.89051,
+    "address": "1600 Olive Chapel Rd, Apex, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-72990747",
+    "name": "WAKE RELIEF",
+    "lat": 35.78064,
+    "lng": -78.63609,
+    "address": "4 North Blount Street, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-86021496",
+    "name": "COMPASS CHRISTIAN CHURCH",
+    "lat": 35.62945,
+    "lng": -78.71894,
+    "address": "5309 Umstead Road, Fuquay Varina, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382229",
+    "name": "CARE PANTRY",
+    "lat": 35.76534,
+    "lng": -78.75114,
+    "address": "1503 Walnut Street, Cary, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67365691",
+    "name": "REACH MINISTRY",
+    "lat": 35.77166,
+    "lng": -78.7661,
+    "address": "638 Walnut Street, Cary, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381647",
+    "name": "MOBILE MARKET",
+    "lat": 35.77694,
+    "lng": -78.62312,
+    "address": "1001 East Martin Street, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381675",
+    "name": "WITH LOVE FROM JESUS MINISTRIES",
+    "lat": 35.73452,
+    "lng": -78.65401,
+    "address": "421 Chapanoke Road, Raleigh, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-60109937",
+    "name": "WITH LOVE FROM JESUS MINISTRIES",
+    "lat": 35.65499,
+    "lng": -78.46371,
+    "address": "361 West 2nd Street, Clayton, NC, Johnston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382186",
+    "name": "EMANUEL FOOD PANTRY",
+    "lat": 36.02185,
+    "lng": -78.88951,
+    "address": "2504 North Roxboro Street, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382156",
+    "name": "CHRISTIAN ASSEMBLY EMERGENCY FOOD PANTRY",
+    "lat": 36.05833,
+    "lng": -78.90318,
+    "address": "5516 North Roxboro Street, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96401815",
+    "name": "EMERGENCY FOOD PANTRY",
+    "lat": 35.58462,
+    "lng": -78.80141,
+    "address": "216 West Academy Street, Fuquay Varina, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382152",
+    "name": "RUSSELL MEMORIAL CME CHURCH FOOD PANTRY",
+    "lat": 35.97989,
+    "lng": -78.89108,
+    "address": "703 South Alston Avenue, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382198",
+    "name": "MOUNT LEVEL MISSIONARY BAPTIST CHURCH FOOD PANTRY",
+    "lat": 36.05893,
+    "lng": -78.89552,
+    "address": "316 Hebron Road, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382105",
+    "name": "FUQUAY VARINA EMERGENCY FOOD PANTRY",
+    "lat": 35.58462,
+    "lng": -78.80141,
+    "address": "216 West Academy Street, Fuquay Varina, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382277",
+    "name": "PLEASANT GROVE BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.78121,
+    "lng": -78.35289,
+    "address": "952 Morphus Bridge Road, Wendell, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381031",
+    "name": "FAITH BAPTIST CHURCH FOOD PANTRY",
+    "lat": 36.02232,
+    "lng": -78.48844,
+    "address": "249 Holden Road, Youngsville, NC, Franklin",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-51416922",
+    "name": "DURHAM COMMUNITY FOOD PANTRY",
+    "lat": 35.98884,
+    "lng": -78.92803,
+    "address": "2020 Chapel Hill Road, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381558",
+    "name": "FOOD PANTRY",
+    "lat": 35.97003,
+    "lng": -78.84991,
+    "address": "1204 Lynn Road, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381561",
+    "name": "FOOD PANTRY",
+    "lat": 36.00122,
+    "lng": -78.89874,
+    "address": "214 Broadway Street, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382187",
+    "name": "MINISTERIO GUERREROS DE JESUCRISTO INTERNACIONAL FOOD PANTRY",
+    "lat": 36.01321,
+    "lng": -78.89041,
+    "address": "1800 North Roxboro Street, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-87382304",
+    "name": "PARKTOWN FOOD HUB",
+    "lat": 35.89439,
+    "lng": -78.90935,
+    "address": "5123 Revere Road, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382222",
+    "name": "SMITHFIELD AREA MINISTRIES FOOD CLOSET",
+    "lat": 35.51176,
+    "lng": -78.34812,
+    "address": "140 East Market Street, Smithfield, NC, Johnston",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-72990441",
+    "name": "HOUSE OF MERCY FOOD PANTRY AND CLOTHING CLOSET",
+    "lat": 35.93111,
+    "lng": -78.89317,
+    "address": "1305 Odyssey Drive, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382226",
+    "name": "FOOD PANTRY",
+    "lat": 35.7802,
+    "lng": -78.91978,
+    "address": "1624 White Oak Church Road, Apex, NC, Wake",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380881",
+    "name": "FREE FOOD FRIDAYS",
+    "lat": 35.99313,
+    "lng": -78.88541,
+    "address": "909 Liberty Street, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382181",
+    "name": "IMMANUEL TEMPLE SDA CHURCH COMMUNITY SERVICE",
+    "lat": 35.96098,
+    "lng": -78.88837,
+    "address": "2102 South Alston Avenue, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-72990419",
+    "name": "HANNAH'S COMMUNITY KITCHEN",
+    "lat": 36.05833,
+    "lng": -78.90318,
+    "address": "5524 North Roxboro Street, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-84531631",
+    "name": "MOBILE MARKET",
+    "lat": 35.85886,
+    "lng": -79.03195,
+    "address": "326 Nature Trail, Chapel Hill, NC, Orange",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380885",
+    "name": "FOOD PANTRY AND CLOTHING CLOSET",
+    "lat": 35.99343,
+    "lng": -78.89584,
+    "address": "410 Liberty Street, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380786",
+    "name": "DCSL EATS",
+    "lat": 35.99939,
+    "lng": -78.89922,
+    "address": "406 Rigsbee Avenue, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381559",
+    "name": "SECOND MILE MINISTRY",
+    "lat": 36.01026,
+    "lng": -78.92945,
+    "address": "2601 Hillsborough Road, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380852",
+    "name": "JEWISH FOR GOOD",
+    "lat": 35.97939,
+    "lng": -78.95544,
+    "address": "1937 West Cornwallis Road, Durham, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-90698951",
+    "name": "BUTNER CHURCH COUNCIL FOOD PANTRY",
+    "lat": 36.13124,
+    "lng": -78.76776,
+    "address": "405 West E Street, Butner, NC, Granville",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-56755919",
+    "name": "FOOD PANTRY",
+    "lat": 35.95995,
+    "lng": -79.08168,
+    "address": "101 Edgar Street, Chapel Hill, NC, Orange",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67544169",
+    "name": "FOOD PANTRY",
+    "lat": 36.07256,
+    "lng": -78.97219,
+    "address": "415 Country Club Drive, Lumberton, NC, Moore",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382197",
+    "name": "FISHES AND LOAVES FOOD PANTRY",
+    "lat": 36.16714,
+    "lng": -78.87629,
+    "address": "1605 Bahama Road, Bahama, NC, Durham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382161",
+    "name": "COMMUNITY FRIDGE",
+    "lat": 35.91491,
+    "lng": -79.05628,
+    "address": "208 North Columbia Street, Chapel Hill, NC, Orange",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381769",
+    "name": "COMMUNITY MARKET",
+    "lat": 35.91042,
+    "lng": -79.07365,
+    "address": "110 West Main Street, Carrboro, NC, Orange",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38373989",
+    "name": "HUMANE SOCIETY - GRANVILLE COUNTY",
+    "lat": 36.13407,
+    "lng": -78.75846,
+    "address": "Butner, NC, Granville",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38381852",
+    "name": "SAMARITAN RELIEF MINISTRY",
+    "lat": 36.05083,
+    "lng": -79.09752,
+    "address": "300 Millstone Drive, Hillsborough, NC, Orange",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-48251258",
+    "name": "BREAKTHROUGH COMMUNITY CHURCH FOOD PANTRY",
+    "lat": 36.08678,
+    "lng": -79.27314,
+    "address": "703 South 3rd Street, Mebane, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-95794964",
+    "name": "CHATHAM OUTREACH ALLIANCE",
+    "lat": 35.72408,
+    "lng": -79.18633,
+    "address": "40 Camp Drive, Pittsboro, NC, Chatham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-86070642",
+    "name": "MOUNT ZION AME CHURCH FOOD PANTRY",
+    "lat": 36.1695,
+    "lng": -79.13248,
+    "address": "5124 Highway 86 North, Hillsborough, NC, Orange",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382142",
+    "name": "FOOD PANTRY",
+    "lat": 35.72408,
+    "lng": -79.18633,
+    "address": "40 Camp Drive, Pittsboro, NC, Chatham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97661109",
+    "name": "CHATHAM OUTREACH ALLIANCE, INC. (CORA)",
+    "lat": 35.72408,
+    "lng": -79.18633,
+    "address": "40 Camp Drive, Pittsboro, NC",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-72737932",
+    "name": "HUMANE SOCIETY - GRANVILLE COUNTY",
+    "lat": 36.16331,
+    "lng": -78.67477,
+    "address": "2682 Us Highway 15, Creedmoor, NC, Granville",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-54789261",
+    "name": "PAWS4EVER",
+    "lat": 35.98828,
+    "lng": -79.25516,
+    "address": "6311 Nicks Road, Mebane, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378194",
+    "name": "A SHARED BLESSING FOOD PANTRY",
+    "lat": 35.9611,
+    "lng": -80.00771,
+    "address": "335 North Wrenn Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566489",
+    "name": "FOOD PANTRY",
+    "lat": 36.02865,
+    "lng": -79.83015,
+    "address": "3100 Creek Ridge Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68094546",
+    "name": "LEBANON BAPTIST CHURCH FOOD PANTRY",
+    "lat": 36.15391,
+    "lng": -79.7113,
+    "address": "4635 Hicone Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67790735",
+    "name": "TRIAD FOOD PANTRY",
+    "lat": 35.97356,
+    "lng": -80.01662,
+    "address": "1311 Johnson Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566468",
+    "name": "GENESIS BAPTIST CHURCH FOOD PANTRY",
+    "lat": 36.08442,
+    "lng": -79.74871,
+    "address": "2812 E Bessemer Avenue, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68094522",
+    "name": "FREE INDEED FOOD PANTRY",
+    "lat": 36.03596,
+    "lng": -79.85072,
+    "address": "2400 South Holden Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566524",
+    "name": "BURNS HILL FOOD PANTRY",
+    "lat": 35.95877,
+    "lng": -79.99072,
+    "address": "1200 Leonard Avenue, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68078138",
+    "name": "VANDALIA PRESBYTERIAN CHURCH FOOD PANTRY",
+    "lat": 36.01461,
+    "lng": -79.79436,
+    "address": "101 West Vandalia Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68078118",
+    "name": "RENAISSANCE ROAD CHURCH FOOD PANTRY",
+    "lat": 35.96874,
+    "lng": -79.93141,
+    "address": "5114 Harvey Road, Jamestown, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67542608",
+    "name": "TRINITY WORSHIP CENTER FOOD PANTRY",
+    "lat": 36.08128,
+    "lng": -79.49941,
+    "address": "3157 South Church Street, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566668",
+    "name": "NORTHWOOD COMMUNITY FOOD PANTRY",
+    "lat": 35.99841,
+    "lng": -79.99338,
+    "address": "2409 Ambassador Court, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566526",
+    "name": "FOOD PANTRY",
+    "lat": 36.20984,
+    "lng": -79.90388,
+    "address": "2334 Scalesville Road, Summerfiled, NC",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377809",
+    "name": "FOOD PANTRY",
+    "lat": 36.08755,
+    "lng": -79.88415,
+    "address": "5509 West Friendly Avenue, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68094487",
+    "name": "ST. MATTHEWS UNITED METHODIST CHURCH FOOD PANTRY",
+    "lat": 36.05235,
+    "lng": -79.7803,
+    "address": "600 East Florida Street, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68094503",
+    "name": "FIVE LOAVES TWO FISH FOOD PANTRY",
+    "lat": 36.01443,
+    "lng": -79.97402,
+    "address": "2066 Deep River Road, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566452",
+    "name": "FOOD BANK",
+    "lat": 35.99209,
+    "lng": -79.9531,
+    "address": "715-b West Main Street, Jamestown, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566636",
+    "name": "FOOD PANTRY",
+    "lat": 35.98407,
+    "lng": -79.9787,
+    "address": "1409 Deep River Road, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378357",
+    "name": "FOOD PANTRY",
+    "lat": 35.94664,
+    "lng": -79.99939,
+    "address": "401 Lake Avenue, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566601",
+    "name": "FOOD PANTRY",
+    "lat": 36.02165,
+    "lng": -79.86662,
+    "address": "3304 Groometown Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566650",
+    "name": "FOOD PANTRY",
+    "lat": 35.97408,
+    "lng": -79.97578,
+    "address": "1327 Cedrow Drive, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67542753",
+    "name": "BREAD OF LIFE FOOD BANK",
+    "lat": 36.08167,
+    "lng": -79.51913,
+    "address": "3741 South Church Street, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566475",
+    "name": "FOOD PANTRY",
+    "lat": 35.95034,
+    "lng": -79.55318,
+    "address": "4400 Alamance Church Road, Liberty, NC, Randolph",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566642",
+    "name": "FOOD PANTRY",
+    "lat": 36.06423,
+    "lng": -79.75919,
+    "address": "2123 Mcconnell Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566662",
+    "name": "FOOD PANTRY",
+    "lat": 36.06393,
+    "lng": -79.78719,
+    "address": "408 Martin Luther King Jr Drive, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566580",
+    "name": "ELIJAH'S FOOD PANTRY",
+    "lat": 36.02422,
+    "lng": -80.02133,
+    "address": "3929 Johnson Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566656",
+    "name": "FOOD PANTRY",
+    "lat": 35.96254,
+    "lng": -80.00094,
+    "address": "214 Fourth Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377986",
+    "name": "FOOD PANTRY",
+    "lat": 36.0642,
+    "lng": -79.79417,
+    "address": "305 West Gate City Boulevard, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378280",
+    "name": "FOOD PANTRY",
+    "lat": 35.96375,
+    "lng": -80.00184,
+    "address": "400 North Centennial Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377952",
+    "name": "EMERGENCY FOOD PANTRY",
+    "lat": 36.06015,
+    "lng": -79.79926,
+    "address": "1001 Freeman Mill Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566498",
+    "name": "5 LOAVES 2 FISH FOOD PANTRY",
+    "lat": 36.01443,
+    "lng": -79.97402,
+    "address": "2066 Deep River Road, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378341",
+    "name": "FOOD ASSISTANCE",
+    "lat": 35.93199,
+    "lng": -79.9888,
+    "address": "2301 South Main Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67790778",
+    "name": "NEW BEGINNINGS FULL GOSPEL MINISTRIES",
+    "lat": 35.96223,
+    "lng": -80.00145,
+    "address": "215 4th Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97561507",
+    "name": "FREE COMMUNITY MOBILE MARKET",
+    "lat": 36.07202,
+    "lng": -79.75795,
+    "address": "238 South English Street, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97561463",
+    "name": "FAITH FELLOWSHIP OF GREENSBORO",
+    "lat": 36.03293,
+    "lng": -79.8811,
+    "address": "4615-a, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566532",
+    "name": "DRAWERS OF HOPE RESOURCE CENTER",
+    "lat": 35.9894,
+    "lng": -79.9614,
+    "address": "1213 Greensboro Road, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97561479",
+    "name": "DIVINE INTERVENTION - CARE LINK",
+    "lat": 36.05357,
+    "lng": -79.81197,
+    "address": "1214 Grove Street, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-43558598",
+    "name": "MOBILE MARKET",
+    "lat": 36.07202,
+    "lng": -79.75795,
+    "address": "238 South English Street, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68078156",
+    "name": "FOOD PANTRY",
+    "lat": 35.90951,
+    "lng": -79.65762,
+    "address": "2105 Nc Highway 62 East, Julian, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-57410579",
+    "name": "COMMUNITY SUPPORT AND NUTRITION PROGRAM",
+    "lat": 35.95895,
+    "lng": -79.99314,
+    "address": "1012 Leonard Avenue, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-85290797",
+    "name": "FEED ONE SAVE ONE",
+    "lat": 36.04895,
+    "lng": -79.84047,
+    "address": "5 Centerview Drive, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-81132439",
+    "name": "FRESH MOBILE MARKETS",
+    "lat": 36.06868,
+    "lng": -79.9614,
+    "address": "300 Nc Highway 68 South, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566427",
+    "name": "GATE CITY GROCERY GIVEAWAY",
+    "lat": 36.06723,
+    "lng": -79.86101,
+    "address": "204 South Westgate Drive, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378197",
+    "name": "FAMILY MARKET",
+    "lat": 36.05516,
+    "lng": -79.87496,
+    "address": "3711 Alliance Drive, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-62009469",
+    "name": "ANIMAL SERVICES",
+    "lat": 36.05281,
+    "lng": -79.92089,
+    "address": "980 Guilford College Road, Greensboro, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68209897",
+    "name": "EMERYWOOD BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.96558,
+    "lng": -80.03533,
+    "address": "1300 Country Club Drive, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67790819",
+    "name": "FAMILY FIRST FOOD PANTRY",
+    "lat": 35.93424,
+    "lng": -80.04279,
+    "address": "234 Dorothy Street, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67541958",
+    "name": "LITTLE PORTION FOOD PANTRY",
+    "lat": 36.09529,
+    "lng": -79.43996,
+    "address": "328 West Davis Street, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97575857",
+    "name": "LEAP FOOD PANTRY",
+    "lat": 35.94776,
+    "lng": -80.00864,
+    "address": "401 Taylor Avenue, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377522",
+    "name": "CENTRAL TRIAD CHURCH FOOD PANTRY",
+    "lat": 36.05415,
+    "lng": -80.16864,
+    "address": "2935 Cole Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67356406",
+    "name": "UNION RIDGE CHURCH FOOD PANTRY",
+    "lat": 36.20802,
+    "lng": -79.4018,
+    "address": "115 Altamahaw-union Ridge Road, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67357453",
+    "name": "GLEN HOPE BAPTIST CHURCH FOOD PANTRY",
+    "lat": 36.08793,
+    "lng": -79.41484,
+    "address": "911 North Avenue, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-89762789",
+    "name": "SOUTHERN ALAMANCE FAMILY EMPOWERMENT",
+    "lat": 36.07007,
+    "lng": -79.41298,
+    "address": "615 West Harden Street, Graham, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566519",
+    "name": "ANOTHER CHANCE FOOD & CARE MISSION",
+    "lat": 35.94237,
+    "lng": -80.02538,
+    "address": "1916 West English Road, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377516",
+    "name": "SAINT STEPHEN MISSIONARY BAPTIST CHURCH",
+    "lat": 36.14393,
+    "lng": -80.2088,
+    "address": "5000 Noble Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377960",
+    "name": "FOOD PANTRY",
+    "lat": 35.94776,
+    "lng": -80.00864,
+    "address": "401 Taylor Avenue, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97566594",
+    "name": "FOOD PANTRY",
+    "lat": 35.93727,
+    "lng": -80.02507,
+    "address": "1619 West Ward Avenue, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67728013",
+    "name": "LABOR OF LOVE FOOD PANTRY",
+    "lat": 36.00446,
+    "lng": -80.0856,
+    "address": "2817 Abbotts Creek Church Road, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377491",
+    "name": "FOOD PANTRY",
+    "lat": 36.1634,
+    "lng": -80.14576,
+    "address": "2715 Darrow Road, Walkertown, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-76071655",
+    "name": "EMERGENCY FOOD PANTRY",
+    "lat": 36.09641,
+    "lng": -79.41264,
+    "address": "1423 North Church Street, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377532",
+    "name": "BREAD OF LIFE FOOD PANTRY",
+    "lat": 36.12037,
+    "lng": -80.06602,
+    "address": "317 Jefferson Street, Kernersville, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377149",
+    "name": "FOOD PANTRY",
+    "lat": 35.83687,
+    "lng": -80.10678,
+    "address": "159 Myrtle Drive, Thomasville, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379963",
+    "name": "FOOD PANTRY",
+    "lat": 36.33152,
+    "lng": -79.67452,
+    "address": "1863 South Park Drive, Reidsville, NC, Rockingham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377497",
+    "name": "WHOLE MAN FOOD PANTRY",
+    "lat": 36.03807,
+    "lng": -80.21801,
+    "address": "3916 Old Lexington Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377347",
+    "name": "FOOD ASSISTANCE",
+    "lat": 36.11936,
+    "lng": -80.07255,
+    "address": "130 East Mountain Street, Kernersville, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-83210300",
+    "name": "CLIENT CHOICE FOOD PANTRY",
+    "lat": 36.08274,
+    "lng": -80.16354,
+    "address": "3500 Kernersville Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38374948",
+    "name": "FOOD PANTRY",
+    "lat": 36.08506,
+    "lng": -79.42431,
+    "address": "812 North Anthony Street, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-71463890",
+    "name": "THE FAMINE IS OVER",
+    "lat": 36.34529,
+    "lng": -79.66592,
+    "address": "1309 Northup Street, Reidsville, NC, Rockingham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38374974",
+    "name": "FRESH MANNA FOOD MINISTRY",
+    "lat": 36.09765,
+    "lng": -79.42955,
+    "address": "508 North Main Street, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97561428",
+    "name": "COMMUNITY OUTREACH OF ARCHDALE-TRINITY",
+    "lat": 35.9081,
+    "lng": -79.96662,
+    "address": "10607 North Main, High Point, NC, Guilford",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377515",
+    "name": "FOOD PANTRY",
+    "lat": 36.11148,
+    "lng": -80.21346,
+    "address": "2400 Dellabrook Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68210299",
+    "name": "LIBERTY ASSOCIATION OF CHURCHES",
+    "lat": 35.85607,
+    "lng": -79.57727,
+    "address": "329 West Bowman Avenue, Liberty, NC, Randolph",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379870",
+    "name": "REIDSVILLE OUTREACH CENTER",
+    "lat": 36.36993,
+    "lng": -79.66405,
+    "address": "435 Southwest Market Street, Reidsville, NC, Rockingham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379894",
+    "name": "FOOD AND CLOTHING ASSISTANCE",
+    "lat": 36.35355,
+    "lng": -79.65633,
+    "address": "704 Barnes Street, Reidsville, NC, Rockingham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67542590",
+    "name": "DREAMALIGN MINISTRIES",
+    "lat": 36.06816,
+    "lng": -79.39913,
+    "address": "124 East Pine Street, Graham, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379852",
+    "name": "HANDS OF GOD",
+    "lat": 36.38633,
+    "lng": -79.95766,
+    "address": "115 West Hunter Street, Madison, NC, Rockingham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377125",
+    "name": "COOPERATIVE COMMUNITY MINISTRY",
+    "lat": 35.8847,
+    "lng": -80.08387,
+    "address": "10 West Guilford Street, Thomasville, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-81391195",
+    "name": "HUMANE SOCIETY - ALAMANCE COUNTY",
+    "lat": 36.09052,
+    "lng": -79.47932,
+    "address": "2213 Edgewood Avenue, Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-84095052",
+    "name": "FRUIT TREE MINISTRIES",
+    "lat": 36.0898,
+    "lng": -79.43557,
+    "address": "Burlington, NC, Alamance",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-62044136",
+    "name": "ANIMAL SERVICES",
+    "lat": 36.3947,
+    "lng": -79.75098,
+    "address": "250 Cherokee Camp Road, Reidsville, NC, Rockingham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-62444368",
+    "name": "ANIMAL SERVICES",
+    "lat": 36.38521,
+    "lng": -79.74776,
+    "address": "130 Justice Center Drive, Reidsville, NC, Rockingham",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377468",
+    "name": "CLEMMONS FOOD PANTRY",
+    "lat": 36.02436,
+    "lng": -80.38442,
+    "address": "2660 Neudorf Road, Clemmons, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377504",
+    "name": "NEW JERUSALEM FOOD PANTRY",
+    "lat": 36.11044,
+    "lng": -80.22639,
+    "address": "1227 North Dunleith Avenue, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67778970",
+    "name": "BELOVED COMMUNITY FOOD PANTRY",
+    "lat": 36.05375,
+    "lng": -80.23915,
+    "address": "3205 South Main Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377490",
+    "name": "MAPLE SPRINGS UNITED METHODIST CHURCH FOOD PANTRY",
+    "lat": 36.13454,
+    "lng": -80.29036,
+    "address": "2569 Reynolda Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38374766",
+    "name": "THE ROCK CHURCH FOOD PANTRY",
+    "lat": 36.27847,
+    "lng": -80.36799,
+    "address": "416 West King Street, King, NC, Stokes",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377529",
+    "name": "FOOD PANTRY",
+    "lat": 36.02989,
+    "lng": -80.24268,
+    "address": "4423 South Main Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377536",
+    "name": "FOOD PANTRY",
+    "lat": 36.1438,
+    "lng": -80.22755,
+    "address": "3980 North Liberty Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377254",
+    "name": "FOOD PANTRY",
+    "lat": 36.11254,
+    "lng": -80.22471,
+    "address": "1612 East 14th Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38374741",
+    "name": "FOOD PANTRY",
+    "lat": 36.29522,
+    "lng": -80.14321,
+    "address": "301 West Third Street, Walnut Cove, NC, Stokes",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97211002",
+    "name": "FOOD PANTRY",
+    "lat": 36.09899,
+    "lng": -80.25139,
+    "address": "646 West Fifth Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377448",
+    "name": "CARE AND SHARE FOOD PANTRY",
+    "lat": 36.10978,
+    "lng": -80.23439,
+    "address": "1201 N Liberty Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-91524007",
+    "name": "CLIENT CHOICE FOOD PANTRY",
+    "lat": 36.18151,
+    "lng": -80.2431,
+    "address": "5739 Old Rural Hall Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-60451336",
+    "name": "CLIENT CHOICE FOOD PANTRY",
+    "lat": 36.10321,
+    "lng": -80.24665,
+    "address": "710 North Trade Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377480",
+    "name": "FOOD PANTRY AND CLOTHING CLOSET",
+    "lat": 36.08495,
+    "lng": -80.24942,
+    "address": "639 South Green Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377481",
+    "name": "FOOD PANTRY AND CLOTHING CLOSET",
+    "lat": 36.1524,
+    "lng": -80.29444,
+    "address": "2100 Bethabara Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377449",
+    "name": "SAINT PETER'S WE CARE HOUSE",
+    "lat": 36.05033,
+    "lng": -80.22439,
+    "address": "3643 Old Lexington Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67778999",
+    "name": "HOPE OF WINSTON-SALEM",
+    "lat": 36.11713,
+    "lng": -80.24994,
+    "address": "355 Northwest Crawford Place, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377146",
+    "name": "GREATER THINGS OUTREACH CENTER",
+    "lat": 35.91085,
+    "lng": -80.25404,
+    "address": "6282 Old Us Highway 52 North, Lexington, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-95339109",
+    "name": "ESSENTIAL'S BABY PANTRY",
+    "lat": 36.03697,
+    "lng": -80.2664,
+    "address": "Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377510",
+    "name": "CHRIST RESCUE TEMPLE APOSTOLIC CHURCH",
+    "lat": 36.11349,
+    "lng": -80.22731,
+    "address": "1500 North Dunleith Avenue, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377398",
+    "name": "OUR FATHER'S TABLE",
+    "lat": 36.08384,
+    "lng": -80.27001,
+    "address": "630 South Hawthorne Road, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38374744",
+    "name": "MINISTRY PROGRAM",
+    "lat": 36.26321,
+    "lng": -80.36659,
+    "address": "221 Ingram Drive, King, NC, Stokes",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377322",
+    "name": "SUNNYSIDE MINISTRY",
+    "lat": 36.07218,
+    "lng": -80.2328,
+    "address": "319 Haled Street, Winston Salem, NC, Forsyth",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377192",
+    "name": "HUMANE SOCIETY - DAVIE COUNTY",
+    "lat": 36.00157,
+    "lng": -80.44615,
+    "address": "162 Webb Way, Advance, NC, Davie",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377136",
+    "name": "WEST DAVIDSON FOOD PANTRY",
+    "lat": 35.85884,
+    "lng": -80.34434,
+    "address": "4600 West Old Us Highway 64, Lexington, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377063",
+    "name": "THE PASTOR'S PANTRY",
+    "lat": 35.82719,
+    "lng": -80.25168,
+    "address": "307 North State Street, Lexington, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377242",
+    "name": "OUR DAILY BREAD FOOD PANTRY",
+    "lat": 35.88248,
+    "lng": -80.4446,
+    "address": "183 Fork-bixby Road, Advance, NC, Davie",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67728356",
+    "name": "LOAVES AND FISHES FOOD MINISTRY",
+    "lat": 35.81672,
+    "lng": -80.2623,
+    "address": "902 South Main Street, Lexington, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97494189",
+    "name": "FOOD PANTRY",
+    "lat": 36.20876,
+    "lng": -80.60864,
+    "address": "2401 Nebo Road, Yadkinville, NC, Yadkin",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377062",
+    "name": "FOOD PANTRY ASSISTANCE",
+    "lat": 35.83063,
+    "lng": -80.24388,
+    "address": "8 Franklin Street, Lexington, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377176",
+    "name": "FOOD DISTRIBUTION",
+    "lat": 35.89085,
+    "lng": -80.55042,
+    "address": "675 East Lexington Road, Mocksville, NC, Davie",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377020",
+    "name": "EMERGENCY FOOD ASSISTANCE",
+    "lat": 35.81379,
+    "lng": -80.25944,
+    "address": "911 South Talbert Boulevard, Lexington, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-64373726",
+    "name": "FOOD PANTRY",
+    "lat": 36.38701,
+    "lng": -80.46021,
+    "address": "407 East 52 Bypass, Pilot Mountain, NC, Surry",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97519127",
+    "name": "FOOD AND CLOTHING ASSISTANCE",
+    "lat": 36.21499,
+    "lng": -80.46915,
+    "address": "1033 New Birth Drive, East Bend, NC, Yadkin",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-66079514",
+    "name": "FOOD ASSISTANCE",
+    "lat": 35.81973,
+    "lng": -80.26643,
+    "address": "314 West 9th Avenue, Lexington, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382905",
+    "name": "YADKIN CHRISTIAN MINISTRIES",
+    "lat": 36.21471,
+    "lng": -80.50475,
+    "address": "118 East Nc Highway 67 Bypass, East Bend, NC, Yadkin",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382904",
+    "name": "YADKIN CHRISTIAN MINISTRIES",
+    "lat": 36.11759,
+    "lng": -80.65379,
+    "address": "117 Woodlyn Drive, Yadkinville, NC, Yadkin",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371631",
+    "name": "CALVARY EPISCOPAL CHURCH FOOD PANTRY",
+    "lat": 35.443013,
+    "lng": -82.504618,
+    "address": "2840 Hendersonville Road, Fletcher, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-65883342",
+    "name": "SANDY MUSH FOOD PANTRY",
+    "lat": 35.67363,
+    "lng": -82.81236,
+    "address": "19 School Road, Leicester, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371323",
+    "name": "GOD'S LITTLE ANGELS CHRISTMAS PROGRAM",
+    "lat": 35.68219,
+    "lng": -82.58199,
+    "address": "450 Aiken Road, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38372155",
+    "name": "AVERY'S CREEK COMMUNITY FOOD PANTRY",
+    "lat": 35.44379,
+    "lng": -82.57372,
+    "address": "876 Glenn Bridge Road Southeast, Arden, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371723",
+    "name": "FOOD PANTRY",
+    "lat": 35.5039,
+    "lng": -82.52187,
+    "address": "20 Fall Pippin Ln., Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371164",
+    "name": "MANNA MOBILE MARKETS",
+    "lat": 35.41716,
+    "lng": -82.5499,
+    "address": "99 Broadpointe Drive, Mills River, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371365",
+    "name": "FOOD AND CLOTHING ASSISTANCE",
+    "lat": 35.57774,
+    "lng": -82.59382,
+    "address": "750 Haywood Road, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371827",
+    "name": "MANNA FOOD DISTRIBUTION",
+    "lat": 35.65734,
+    "lng": -82.71387,
+    "address": "2979 New Leicester Highway, Leicester, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97209431",
+    "name": "FOOD PANTRY",
+    "lat": 35.56955,
+    "lng": -82.71225,
+    "address": "84 Snow Hill Church Road, Candler, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370949",
+    "name": "FOOD FOR FAIRVIEW",
+    "lat": 35.52353,
+    "lng": -82.41016,
+    "address": "1357 Charlotte Highway, Fairview, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370860",
+    "name": "FOOD PANTRY",
+    "lat": 35.60184,
+    "lng": -82.55127,
+    "address": "50 Orange Street, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371488",
+    "name": "HEALTHY LIVING MOBILE MARKETS",
+    "lat": 35.64088,
+    "lng": -82.57678,
+    "address": "40 North Merrimon Avenue, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370948",
+    "name": "CRISIS MINISTRY",
+    "lat": 35.55656,
+    "lng": -82.53936,
+    "address": "375 Hendersonville Road, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97646115",
+    "name": "12 BASKETS CAFE",
+    "lat": 35.57854,
+    "lng": -82.58814,
+    "address": "610 Haywood Road, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371717",
+    "name": "FREE MARKET AND LUNCH AT THE CROSSROADS",
+    "lat": 35.59888,
+    "lng": -82.54743,
+    "address": "5 Oak Street, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96729881",
+    "name": "FOOD PANTRY",
+    "lat": 35.40969,
+    "lng": -82.55579,
+    "address": "29 Marlowe Drive, Mills River, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370882",
+    "name": "CALVARY CHAPEL OF ASHEVILLE",
+    "lat": 35.37847,
+    "lng": -82.57814,
+    "address": "5516 Boylston Highway, Mills River, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38372093",
+    "name": "COMMUNITY MARKET",
+    "lat": 35.53446,
+    "lng": -82.69386,
+    "address": "89 Old Candlertown Road, Candler, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97306723",
+    "name": "EMERGENCY SERVICES",
+    "lat": 35.5039,
+    "lng": -82.52187,
+    "address": "20 Fall Pippin Lane, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370694",
+    "name": "BIG IVY COMMUNITY CENTER",
+    "lat": 35.76012,
+    "lng": -82.43138,
+    "address": "540 Dillingham Road, Barnardsville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370873",
+    "name": "FAMILY RESOURCE CENTER",
+    "lat": 35.59941,
+    "lng": -82.59207,
+    "address": "564 North Louisiana Avenue, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-83895819",
+    "name": "FAMILY RESOURCE CENTER",
+    "lat": 35.48787,
+    "lng": -82.53988,
+    "address": "275 Overlook Road, Asheville, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-86683096",
+    "name": "SOUTH BUNCOMBE AND HENDERSON COUNTIES",
+    "lat": 35.45152,
+    "lng": -82.51144,
+    "address": "109 Crescent Hill Drive, Arden, NC, Buncombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96730007",
+    "name": "FOOD PANTRY",
+    "lat": 35.3379,
+    "lng": -82.53384,
+    "address": "3580 Brevard Road, Hendersonville, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-94195574",
+    "name": "COMMUNITY FOOD PANTRY",
+    "lat": 35.38302,
+    "lng": -82.35888,
+    "address": "3685 Chimney Rock Road, Hendersonville, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96714009",
+    "name": "FOOD PANTRY",
+    "lat": 35.35135,
+    "lng": -82.47534,
+    "address": "2567 Asheville Highway, Hendersonville, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96729553",
+    "name": "FOOD PANTRY",
+    "lat": 35.3703,
+    "lng": -82.41821,
+    "address": "827 Fruitland Road, Hendersonville, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96652821",
+    "name": "FOOD PANTRY",
+    "lat": 35.59165,
+    "lng": -82.93925,
+    "address": "5405 Crabtree Road (highway 209), Clyde, NC, Haywood",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96667995",
+    "name": "FOOTHILLS FOOD HUB SALEM FREEWILL BAPTIST CHURCH; FOOD PANTRY",
+    "lat": 35.59988,
+    "lng": -82.14825,
+    "address": "407 Salem Church Rd, Old Fort, NC, Mcdowell",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38372282",
+    "name": "BETHEL COMMUNITY PANTRY",
+    "lat": 35.47316,
+    "lng": -82.89542,
+    "address": "664 Sonoma Road, Waynesville, NC, Haywood",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371676",
+    "name": "MANNA FOOD DISTRIBUTION",
+    "lat": 35.28478,
+    "lng": -82.42406,
+    "address": "2227 Spartanburg Highway, East Flat Rock, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97502688",
+    "name": "FOOD PANTRY",
+    "lat": 35.76999,
+    "lng": -82.87399,
+    "address": "35 Meadow Lane, Hot Springs, NC, Madison",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-42062360",
+    "name": "FOOD PANTRY",
+    "lat": 35.54419,
+    "lng": -82.84716,
+    "address": "143 Pandora Circle, Canton, NC, Haywood",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370690",
+    "name": "FOOD PANTRY",
+    "lat": 35.80671,
+    "lng": -82.66798,
+    "address": "5111 Us Highway 25/70, Marshall, NC, Madison",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97519966",
+    "name": "FOOD PANTRY",
+    "lat": 35.82789,
+    "lng": -82.56155,
+    "address": "149 Brook Street, Mars Hill, NC, Madison",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-50892198",
+    "name": "MOBILE PANTRY",
+    "lat": 35.33623,
+    "lng": -82.44346,
+    "address": "310 Freeman Street, Hendersonville, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371678",
+    "name": "FISHES AND LOAVES FOOD PANTRY",
+    "lat": 35.31902,
+    "lng": -82.59564,
+    "address": "110 Brickyard Road, Etowah, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96394591",
+    "name": "FEEDING THE MULTITUDE",
+    "lat": 35.55762,
+    "lng": -82.83814,
+    "address": "50 Azalea Drive, Canton, NC, Haywood",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-78081248",
+    "name": "AMAZING GRACE FOOD PANTRY",
+    "lat": 35.30559,
+    "lng": -82.46245,
+    "address": "814a Kanuga Road, Hendersonville, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38372285",
+    "name": "BEAVERDAM COMMUNITY CENTER",
+    "lat": 35.55837,
+    "lng": -82.83396,
+    "address": "1620 North Canton Road, Canton, NC, Haywood",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371368",
+    "name": "FOOD PANTRIES",
+    "lat": 35.31668,
+    "lng": -82.45811,
+    "address": "239 Third Avenue East, Hendersonville, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38370598",
+    "name": "ANCHOR BAPTIST CHURCH AND MINISTRIES",
+    "lat": 35.2724,
+    "lng": -82.64766,
+    "address": "3232 Hendersonville Highway, Pisgah Forest, NC, Transylvania",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38372151",
+    "name": "WELCOME TABLE",
+    "lat": 35.28008,
+    "lng": -82.42202,
+    "address": "2443 Spartanburg Highway, East Flat Rock, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38371436",
+    "name": "THE STOREHOUSE",
+    "lat": 35.28339,
+    "lng": -82.42339,
+    "address": "2313 Spartanburg Highway, East Flat Rock, NC, Henderson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96569197",
+    "name": "FOOD PANTRY",
+    "lat": 34.23993,
+    "lng": -78.01069,
+    "address": "509 Village Road, Leland, NC, Brunswick",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-61124194",
+    "name": "HOUSE OF MERCY FOOD PANTRY",
+    "lat": 34.1548,
+    "lng": -77.89271,
+    "address": "4702 South College Road, Wilmington, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380219",
+    "name": "CLIENT CHOICE FOOD PANTRY",
+    "lat": 34.30774,
+    "lng": -77.98151,
+    "address": "4280 Us Highway 421 North, Wilmington, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380253",
+    "name": "FOOD PANTRY",
+    "lat": 34.18832,
+    "lng": -77.94094,
+    "address": "2750 Vance Street, Wilmington, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380579",
+    "name": "SECOND HELPINGS",
+    "lat": 34.2189,
+    "lng": -77.9365,
+    "address": "811 Martin Street, Wilmington, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-61323823",
+    "name": "HELPING HANDS MINISTRIES",
+    "lat": 34.34191,
+    "lng": -77.90642,
+    "address": "4849 Castle Hayne Road, Castle Hayne, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-61176377",
+    "name": "WRIGHTSBORO UNITED METHODIST CHURCH",
+    "lat": 34.28929,
+    "lng": -77.91376,
+    "address": "3300 North Kerr Avenue, Wilmington, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380485",
+    "name": "EARLY BREAD OUTREACH MINISTRIES",
+    "lat": 34.20861,
+    "lng": -77.94617,
+    "address": "314 South Carolina Avenue, Wilmington, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-61214254",
+    "name": "4C'S FOOD PANTRY",
+    "lat": 34.37223,
+    "lng": -77.70451,
+    "address": "15200 Us Highway 17, Hampstead, NC, Pender",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-61124469",
+    "name": "SONRISE BAPTIST CHURCH FOOD PANTRY",
+    "lat": 33.95456,
+    "lng": -78.0295,
+    "address": "8375 River Road, Southport, NC, Brunswick",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-85316263",
+    "name": "FOOD PANTRY",
+    "lat": 34.3777,
+    "lng": -78.29183,
+    "address": "1795 Woodyard Road, Riegelwood, NC, Columbus",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-61192805",
+    "name": "FOOD PANTRY",
+    "lat": 34.5517,
+    "lng": -77.93431,
+    "address": "416 West Bridgers Street, Burgaw, NC, Pender",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380197",
+    "name": "FOOD PANTRY",
+    "lat": 34.03839,
+    "lng": -78.24612,
+    "address": "929 Old Ocean Highway, Bolivia, NC, Brunswick",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-83702958",
+    "name": "EMERGENCY ASSISTANCE",
+    "lat": 34.23646,
+    "lng": -77.94452,
+    "address": "20 North 4th Street, Wilmington, NC, New Hanover",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67471410",
+    "name": "CHARITY CHURCH FOOD PANTRY",
+    "lat": 35.0742,
+    "lng": -78.86945,
+    "address": "431 Neville Street, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67471481",
+    "name": "VILLAGE BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.09561,
+    "lng": -79.01162,
+    "address": "555 North Reilly Road, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-84153936",
+    "name": "HOLY TRINITY EPISCOPAL CHURCH FOOD PANTRY",
+    "lat": 35.05347,
+    "lng": -78.90745,
+    "address": "1601 Raeford Road, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-70055155",
+    "name": "YOUR BROTHER'S KEEPER FOOD PANTRY",
+    "lat": 35.05333,
+    "lng": -78.86802,
+    "address": "325 B Street, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376673",
+    "name": "FOOD PANTRY",
+    "lat": 34.97057,
+    "lng": -78.94733,
+    "address": "3909 Ellison Street, Hope Mills, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-70945948",
+    "name": "FOOD PANTRY",
+    "lat": 35.14512,
+    "lng": -78.99284,
+    "address": "2411 Rodney Trail, Fort Liberty, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-72047945",
+    "name": "HAND-EE FOOD PANTRY",
+    "lat": 35.24963,
+    "lng": -78.92896,
+    "address": "12254 Highway 210 South, Spring Lake, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376709",
+    "name": "FOOD PANTRY",
+    "lat": 35.06508,
+    "lng": -78.87749,
+    "address": "726 Ramsey Street, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378391",
+    "name": "ANDERSON CREEK COMMUNITY CHURCH",
+    "lat": 35.20008,
+    "lng": -78.98997,
+    "address": "2085 Ray Road, Spring Lake, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-74725408",
+    "name": "CRUCIFORM CHURCH OF CHRIST",
+    "lat": 35.17404,
+    "lng": -78.96406,
+    "address": "360 Pine Tree Lane, Spring Lake, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376890",
+    "name": "OPERATION BLESSING OF FAYETTEVILLE",
+    "lat": 35.0769,
+    "lng": -78.88164,
+    "address": "1337 Ramsey Street, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376819",
+    "name": "EMERGENCY ASSISTANCE PROGRAM",
+    "lat": 35.03656,
+    "lng": -78.89507,
+    "address": "701 Whitfield Street, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-71614535",
+    "name": "FIVE N TWO FOOD PANTRY",
+    "lat": 35.3066,
+    "lng": -79.08906,
+    "address": "17247 Nc Highway 27 West, Sanford, NC, Lee",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67727870",
+    "name": "COMMUNITY FOOD PANTRY",
+    "lat": 34.8074,
+    "lng": -78.97511,
+    "address": "406 West Broad Street, Saint Pauls, NC, Robeson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-64262201",
+    "name": "HUNGER RELIEF",
+    "lat": 34.9911,
+    "lng": -78.89177,
+    "address": "3110 Doc Bennett Road, Fayetteville, NC, Cumberland",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67476589",
+    "name": "SHARING HOPE FOOD PANTRY",
+    "lat": 35.31265,
+    "lng": -78.97301,
+    "address": "2212 Nursery Road, Lillington, NC, Harnett",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67435930",
+    "name": "HARNETT FOOD PANTRY",
+    "lat": 35.39337,
+    "lng": -78.82501,
+    "address": "413 West Old Road, Lillington, NC, Harnett",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379966",
+    "name": "CHRISTIAN FOOD BANK OF SALEMBURG",
+    "lat": 35.01557,
+    "lng": -78.5031,
+    "address": "113 North Main Street, Salemburg, NC, Sampson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-83800609",
+    "name": "DUMA HELP CENTER",
+    "lat": 35.30695,
+    "lng": -78.60744,
+    "address": "323 East Broad Street, Dunn, NC, Harnett",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379791",
+    "name": "WORD OF LIFE TEMPLE FOOD PANTRY",
+    "lat": 34.99813,
+    "lng": -79.21722,
+    "address": "1988 Fayetteville Road, Raeford, NC, Hoke",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378399",
+    "name": "RECRUITERS FOR CHRIST CHURCH FOOD PANTRY",
+    "lat": 35.33867,
+    "lng": -78.64952,
+    "address": "933 Red Hill Church Road, Dunn, NC, Harnett",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379790",
+    "name": "FOOD PANTRY",
+    "lat": 34.97987,
+    "lng": -79.22378,
+    "address": "116 East Elwood Avenue, Raeford, NC, Hoke",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379406",
+    "name": "HIDDEN MANNA FOOD PANTRY",
+    "lat": 35.5287,
+    "lng": -77.47814,
+    "address": "3501 Speight Seed Farm Road, Winterville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379370",
+    "name": "MEMORIAL BAPTIST CHURCH FOOD PANTRY",
+    "lat": 35.58832,
+    "lng": -77.34904,
+    "address": "1510 Greenville Boulevard Southeast, Greenville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379375",
+    "name": "SAINT PETER CATHOLIC CHURCH FOOD PANTRY",
+    "lat": 35.60642,
+    "lng": -77.34193,
+    "address": "2700 East Fourth Street, Greenville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97638736",
+    "name": "FEED YOUR NEIGHBOR COMMUNITY FOOD PANTRY",
+    "lat": 35.61176,
+    "lng": -77.36861,
+    "address": "413 East 4th Street, Greenville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379396",
+    "name": "PHILIPPI CHURCH OF CHRIST FOOD PANTRY",
+    "lat": 35.63022,
+    "lng": -77.34426,
+    "address": "3760 Philippi Drive, Greenville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379371",
+    "name": "FOOD PANTRY",
+    "lat": 35.61186,
+    "lng": -77.36912,
+    "address": "401 East 4th Street, Greenville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379376",
+    "name": "FOOD PANTRY - KOINONIA CHRISTIAN CENTER CHURCH",
+    "lat": 35.57339,
+    "lng": -77.42061,
+    "address": "1405 Greenville Boulevard Southwest, Greenville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379434",
+    "name": "FOOD PANTRY",
+    "lat": 35.57002,
+    "lng": -77.44068,
+    "address": "1746 Union Street, Greenville, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379357",
+    "name": "AYDEN CHRISTIAN CARE CENTER",
+    "lat": 35.47264,
+    "lng": -77.41652,
+    "address": "4106 West Avenue, Ayden, NC, Pitt",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-88344241",
+    "name": "EAGLE'S WINGS AT IGNITE FOOD PANTRY",
+    "lat": 35.61628,
+    "lng": -77.063,
+    "address": "4770 Us Highway 17 North, Washington, NC, Beaufort",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97215183",
+    "name": "BEAUFORT COUNTY FOOD PANTRY",
+    "lat": 35.60371,
+    "lng": -77.03255,
+    "address": "4449 Market Street Extension, Washington, NC, Beaufort",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38373321",
+    "name": "HARVEST CHURCH FOOD PANTRY",
+    "lat": 35.568,
+    "lng": -77.0716,
+    "address": "2020 West 15th Street, Washington, NC, Beaufort",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-68531300",
+    "name": "BIBLE WAY APOSTOLIC CHURCH FOOD PANTRY",
+    "lat": 35.85551,
+    "lng": -77.06542,
+    "address": "301 Center Street, Williamston, NC, Martin",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97209396",
+    "name": "DISTINGUISHED MEN OF PURPOSE FOOD PANTRY",
+    "lat": 35.45679,
+    "lng": -77.12209,
+    "address": "3831 Us-17, Chocowinity, NC, Beaufort",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-93108890",
+    "name": "BACKPACK PROGRAM",
+    "lat": 35.55124,
+    "lng": -77.0671,
+    "address": "932 West Third Street, Washington, NC, Beaufort",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38373318",
+    "name": "HOMEBOUND PROGRAM",
+    "lat": 35.55124,
+    "lng": -77.0671,
+    "address": "932 West Third Street, Washington, NC, Beaufort",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38373322",
+    "name": "FOOD PANTRY",
+    "lat": 35.55067,
+    "lng": -77.0508,
+    "address": "112 West Ninth Street, Washington, NC, Beaufort",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38382765",
+    "name": "FOOD PANTRY",
+    "lat": 35.89634,
+    "lng": -77.53986,
+    "address": "701 Cedar Lane, Tarboro, NC, Edgecombe",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379159",
+    "name": "ST. ANNE'S EPISCOPAL CHURCH FOOD PANTRY",
+    "lat": 34.77404,
+    "lng": -77.42786,
+    "address": "711 Henderson Drive, Jacksonville, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379296",
+    "name": "LUTHERAN CHURCH OF OUR SAVIOR FOOD PANTRY",
+    "lat": 34.74739,
+    "lng": -77.405,
+    "address": "1115 Lejeune Boulevard, Jacksonville, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379160",
+    "name": "NORTHWOODS UNITED METHODIST CHURCH FOOD PANTRY",
+    "lat": 34.78524,
+    "lng": -77.42325,
+    "address": "1528 Gum Branch Road, Jacksonville, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379309",
+    "name": "ENON CHAPEL BAPTIST CHURCH FOOD PANTRY",
+    "lat": 34.71767,
+    "lng": -77.31924,
+    "address": "101 Barbara Avenue, Midway Park, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-78399868",
+    "name": "FOOD PANTRY",
+    "lat": 34.75296,
+    "lng": -77.42712,
+    "address": "327 Mildred Avenue, Jacksonville, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-93110085",
+    "name": "BOUNTIFUL BLESSINGS FOOD MINISTRY",
+    "lat": 34.7486,
+    "lng": -77.44907,
+    "address": "153 Broadhurst Street, Jacksonville, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379308",
+    "name": "FOOD BANK - CENTRAL AND EASTERN NORTH CAROLINA",
+    "lat": 34.55375,
+    "lng": -77.39362,
+    "address": "126 Park Lane, Sneads Ferry, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38379302",
+    "name": "FOLKSTONE ORIGINAL FREEWILL BAPTIST CHURCH FOOD PANTRY",
+    "lat": 34.53607,
+    "lng": -77.50183,
+    "address": "133 Old Folkstone Road, Holly Ridge, NC, Onslow",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67779013",
+    "name": "FILLING STATION",
+    "lat": 35.00576,
+    "lng": -77.22031,
+    "address": "221 Main Street, Pollocksville, NC, Jones",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96162863",
+    "name": "SHARE THE TABLE FOOD PANTRY",
+    "lat": 34.4695,
+    "lng": -77.58274,
+    "address": "21 Perkins Road, Hampstead, NC, Pender",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67476996",
+    "name": "SHARE THE TABLE",
+    "lat": 34.4695,
+    "lng": -77.58274,
+    "address": "21 Perkins Road, Hampstead, NC, Pender",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-70437447",
+    "name": "LOVE CHRISTIAN CENTER FOOD PANTRY",
+    "lat": 35.68398,
+    "lng": -80.43238,
+    "address": "102 North Long Street, East Spencer, NC, Rowan",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-67743926",
+    "name": "COOLEEMEE COMMUNITY FOOD PANTRY",
+    "lat": 35.8157,
+    "lng": -80.55518,
+    "address": "204 Marginal Street, Cooleemee, NC, Davie",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38374593",
+    "name": "FOOD PANTRY",
+    "lat": 35.66867,
+    "lng": -80.45566,
+    "address": "620 Bringle Ferry Road, Salisbury, NC, Rowan",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38374540",
+    "name": "FOOD AND CLOTHING PANTRY",
+    "lat": 35.66661,
+    "lng": -80.46497,
+    "address": "226 North Long Street, Salisbury, NC, Rowan",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378455",
+    "name": "FOOD PANTRY",
+    "lat": 35.84269,
+    "lng": -80.73349,
+    "address": "1902 Mocksville Highway, Cleveland, NC, Rowan",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378452",
+    "name": "FOOD PANTRY",
+    "lat": 35.76703,
+    "lng": -80.88564,
+    "address": "1380 Shelton Avenue, Statesville, NC, Iredell",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96428457",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.38197,
+    "lng": -80.30872,
+    "address": "20987 Nc 73, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96401030",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.41398,
+    "lng": -80.21387,
+    "address": "34915 Locust Lane, New London, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96404174",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.35853,
+    "lng": -80.30972,
+    "address": "28699 Millingport Road, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96401240",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.45321,
+    "lng": -80.23553,
+    "address": "Highway 52, New London, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96403793",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.4701,
+    "lng": -80.25741,
+    "address": "204 North Main Street, Richfield, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38378450",
+    "name": "FOOD PANTRY",
+    "lat": 35.7762,
+    "lng": -80.87313,
+    "address": "752 Old Salisbury Road, Statesville, NC, Iredell",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38376216",
+    "name": "ELDERLY AND DISABILITY SERVICE",
+    "lat": 35.58786,
+    "lng": -80.79668,
+    "address": "919 North Main Street, Mooresville, NC, Iredell",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-97211309",
+    "name": "HELP MINISTRIES OF TROUTMAN",
+    "lat": 35.67784,
+    "lng": -80.90689,
+    "address": "241 State Park Road, Troutman, NC, Iredell",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-61214172",
+    "name": "GRASSROOTS GROCERY",
+    "lat": 35.59969,
+    "lng": -80.83971,
+    "address": "2456 Charlotte Highway, Mooresville, NC, Iredell",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96428741",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.42672,
+    "lng": -80.21165,
+    "address": "40206 Us 52, New London, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38377124",
+    "name": "SOUTH DAVIDSON FAMILY RESOURCE CENTER",
+    "lat": 35.62921,
+    "lng": -80.11343,
+    "address": "292 South Main Street, Denton, NC, Davidson",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-39813380",
+    "name": "CHRISTIAN FOOD PANTRY OF SHERRILLS FORD AND CLOTHES CLOSET",
+    "lat": 35.63148,
+    "lng": -81.03024,
+    "address": "2211 Hopewell Church Road, Sherrills Ford, NC, Catawba",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-84757704",
+    "name": "FOOD PANTRY",
+    "lat": 35.66344,
+    "lng": -81.2208,
+    "address": "108 East 1st Street, Newton, NC, Catawba",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-84574431",
+    "name": "FOOD PANTRY",
+    "lat": 35.66216,
+    "lng": -81.22004,
+    "address": "245 East N Street, Newton, NC, Catawba",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-52226377",
+    "name": "YOUR NEIGHBORS PANTRY",
+    "lat": 35.71083,
+    "lng": -81.2001,
+    "address": "502 Thornburg Drive Northeast, Conover, NC, Catawba",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-81731848",
+    "name": "SYBA FOOD PANTRY",
+    "lat": 35.7841,
+    "lng": -80.91252,
+    "address": "1423 West Front Street, Statesville, NC, Iredell",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-85247345",
+    "name": "FOOD PANTRIES",
+    "lat": 35.35298,
+    "lng": -80.17788,
+    "address": "1325 East Main Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380098",
+    "name": "FOOD PANTRIES",
+    "lat": 35.34409,
+    "lng": -80.19889,
+    "address": "506 South 1st Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96403607",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.27082,
+    "lng": -80.17158,
+    "address": "40031 Porter Road, Norwood, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96428884",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.27735,
+    "lng": -80.31915,
+    "address": "17236 Frog Pond Road, Oakboro, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96429444",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.34555,
+    "lng": -80.19922,
+    "address": "1st Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380079",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.34705,
+    "lng": -80.2099,
+    "address": "1003 Meadow Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-38380101",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.35078,
+    "lng": -80.16642,
+    "address": "1816 B East Main Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96428145",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.35318,
+    "lng": -80.21132,
+    "address": "336 Church Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96428337",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.35862,
+    "lng": -80.19902,
+    "address": "540 North 1st Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96400473",
+    "name": "SELF SERVE FOOD PANTRY BOX",
+    "lat": 35.34555,
+    "lng": -80.19922,
+    "address": "1st Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-93082861",
+    "name": "FOOD AND CLOTHING ASSISTANCE",
+    "lat": 35.34942,
+    "lng": -80.19278,
+    "address": "118 Heath Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96427809",
+    "name": "MOBILE PANTRY",
+    "lat": 35.34383,
+    "lng": -80.18545,
+    "address": "621 Wall Street, Albemarle, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  },
+  {
+    "nc211LocationId": "211northca-96427615",
+    "name": "MOBILE PANTRY",
+    "lat": 35.2183,
+    "lng": -80.3185,
+    "address": "423 South Main Street, Oakboro, NC, Stanly",
+    "phone": "",
+    "category": "food_bank"
+  }
+]
