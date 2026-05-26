@@ -1,6 +1,4 @@
 node_modules/
-data/gtfs-nc-routes.geojson
-data/nc-food-desert.geojson
 data/nc-tracts.geojson
 node_modules/
 .env
