@@ -428,7 +428,7 @@ html.is-scrolling .home-reach-ticker-track {
   height: min(72vh, 640px);
   min-height: 400px;
   z-index: 5;
-  margin-top: calc(46px + clamp(2.75rem, 7vw, 4.75rem) - min(36vh, 320px));
+  margin-top: calc(46px + clamp(2.75rem, 7vw, 4.75rem) - min(36vh, 320px) + 48px);
 }
 
 #hero-map {
@@ -2452,7 +2452,7 @@ body.page-explorer .leaflet-control-attribution {
   #hero-map-wrap {
     height: 48vh;
     min-height: 300px;
-    margin-top: 0;
+    margin-top: 24px;
   }
   .hero-title { margin-bottom: 20px; }
   .hero-scroll { right: 20px; bottom: 20px; }
