@@ -86,7 +86,7 @@ async function resolveUsdaCsvPath() {
   return csvPath;
 }
 
-function normalizeLapop1share(val) {
+function normalizeShare(val) {
   if (val === null || val === undefined || Number.isNaN(val)) return null;
   const n = Number(val);
   return n > 1 ? n / 100 : n;
@@ -105,13 +105,15 @@ async function parseNcUsdaRows(csvPath) {
 
         ncRows.push({
           CensusTract: String(row.CensusTract),
+          County: String(row.County || '').trim(),
           LILATracts_1And10: Number(row.LILATracts_1And10),
           PovertyRate:
             Number(row.PovertyRate) > 1
               ? Number(row.PovertyRate) / 100
               : Number(row.PovertyRate),
           MedianFamilyIncome: Number(row.MedianFamilyIncome),
-          lapop1share: normalizeLapop1share(Number(row.lapop1share)),
+          lapop1share: normalizeShare(Number(row.lapop1share)),
+          lalowi1share: normalizeShare(Number(row.lalowi1share)),
           lapophalfshare: Number(row.lapophalfshare),
           Urban: Number(row.Urban),
         });
@@ -136,8 +138,9 @@ function mergeTractsWithUsda(geojson, ncRows) {
 
     if (usda) {
       matched += 1;
-      feature.properties.lapop1share =
-        usda.lapop1share > 1 ? usda.lapop1share / 100 : usda.lapop1share;
+      feature.properties.lapop1share = usda.lapop1share;
+      feature.properties.lalowi1share = usda.lalowi1share;
+      feature.properties.County = usda.County;
       feature.properties.LILATracts_1And10 = usda.LILATracts_1And10;
       feature.properties.PovertyRate =
         usda.PovertyRate > 1 ? usda.PovertyRate / 100 : usda.PovertyRate;
@@ -147,6 +150,7 @@ function mergeTractsWithUsda(geojson, ncRows) {
       if (feature.properties.isDesert) desertCount += 1;
     } else {
       feature.properties.lapop1share = null;
+      feature.properties.lalowi1share = null;
       feature.properties.isDesert = false;
     }
   });
@@ -161,8 +165,25 @@ function mergeTractsWithUsda(geojson, ncRows) {
   };
 }
 
+async function patchExistingGeojson() {
+  const { readFileSync, writeFileSync } = await import('node:fs');
+  const geojsonPath = join(DATA_DIR, 'nc-food-desert.geojson');
+  const geojson = JSON.parse(readFileSync(geojsonPath, 'utf8'));
+  const csvPath = await resolveUsdaCsvPath();
+  const ncRows = await parseNcUsdaRows(csvPath);
+  const merged = mergeTractsWithUsda(geojson, ncRows);
+  writeFileSync(geojsonPath, JSON.stringify(merged));
+  const mb = statSync(geojsonPath).size / 1024 / 1024;
+  console.log(`✓ Patched ${geojsonPath} — ${mb.toFixed(1)}MB`);
+}
+
 async function main() {
   mkdirSync(DATA_DIR, { recursive: true });
+
+  if (process.argv.includes('--patch')) {
+    await patchExistingGeojson();
+    return;
+  }
 
   const geojson = await buildNcTractsGeojson();
 

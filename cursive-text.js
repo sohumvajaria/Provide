@@ -1,6 +1,6 @@
 const CURSIVE_FONT_URL =
   'https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/allura/Allura-Regular.ttf';
-const DEFAULT_DRAW_MS = 3500;
+const DEFAULT_FADE_MS = 700;
 
 let cachedCursiveFont = null;
 const pathLayoutCache = new Map();
@@ -52,43 +52,6 @@ function buildLetterPaths(font, text, fontSize) {
   };
 }
 
-function animatePathStroke(pathEl, pathLength, durationMs) {
-  return new Promise((resolve) => {
-    if (pathLength < 1) {
-      resolve();
-      return;
-    }
-
-    let settled = false;
-    const finish = () => {
-      if (settled) return;
-      settled = true;
-      pathEl.style.strokeDashoffset = '0';
-      resolve();
-    };
-
-    pathEl.style.strokeDasharray = `${pathLength} ${pathLength}`;
-    pathEl.style.strokeDashoffset = String(pathLength);
-
-    const start = performance.now();
-
-    function frame(now) {
-      const progress = Math.min((now - start) / durationMs, 1);
-      pathEl.style.strokeDashoffset = String(pathLength * (1 - progress));
-
-      if (progress < 1) {
-        requestAnimationFrame(frame);
-        return;
-      }
-
-      finish();
-    }
-
-    requestAnimationFrame(frame);
-    window.setTimeout(finish, durationMs + 200);
-  });
-}
-
 function getSvg(el) {
   return el.querySelector('.cursive-svg') || el.querySelector('.hero-title-svg');
 }
@@ -97,43 +60,7 @@ function getGlyphs(el) {
   return el.querySelector('.cursive-glyphs') || el.querySelector('.hero-title-glyphs');
 }
 
-async function animateCursive(el, font) {
-  const text = getCursiveText(el);
-  const fontSize = parseInt(el.dataset.fontSize || '128', 10);
-  const drawMs = parseInt(el.dataset.drawMs || String(DEFAULT_DRAW_MS), 10);
-  const svg = getSvg(el);
-  const glyphsGroup = getGlyphs(el);
-  const { items, viewBox } = getLetterPaths(font, text, fontSize);
-  const msPerLetter = Math.max(100, drawMs / Math.max(items.length, 1));
-  const letterStagger = Math.min(70, Math.round(msPerLetter * 0.3));
-
-  glyphsGroup.innerHTML = '';
-  svg.setAttribute('viewBox', viewBox);
-  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-  el.classList.remove('is-loading');
-
-  const pathEls = items.map((item) => {
-    const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    pathEl.setAttribute('d', item.pathData);
-    pathEl.setAttribute('class', 'cursive-letter');
-    glyphsGroup.appendChild(pathEl);
-    return pathEl;
-  });
-
-  await Promise.all(
-    pathEls.map(
-      (pathEl, index) =>
-        new Promise((resolve) => {
-          window.setTimeout(() => {
-            const pathLength = pathEl.getTotalLength();
-            animatePathStroke(pathEl, pathLength, msPerLetter).then(resolve);
-          }, index * letterStagger);
-        })
-    )
-  );
-}
-
-function showCursiveInstant(el, font) {
+function renderCursiveGlyphs(el, font) {
   const text = getCursiveText(el);
   const fontSize = parseInt(el.dataset.fontSize || '128', 10);
   const svg = getSvg(el);
@@ -143,14 +70,56 @@ function showCursiveInstant(el, font) {
   glyphsGroup.innerHTML = '';
   svg.setAttribute('viewBox', viewBox);
   svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-  el.classList.remove('is-loading');
 
   items.forEach((item) => {
     const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     pathEl.setAttribute('d', item.pathData);
-    pathEl.setAttribute('class', 'cursive-letter cursive-letter--complete');
+    pathEl.setAttribute('class', 'cursive-letter');
     glyphsGroup.appendChild(pathEl);
   });
+}
+
+function fadeInCursive(el, font) {
+  const fadeMs = parseInt(el.dataset.fadeMs || String(DEFAULT_FADE_MS), 10);
+  const delayMs = parseInt(el.dataset.cursiveDelay || '0', 10);
+  const svg = getSvg(el);
+
+  renderCursiveGlyphs(el, font);
+  svg.style.opacity = '0';
+  svg.style.transition = `opacity ${fadeMs}ms ease`;
+  el.classList.remove('is-loading');
+
+  return new Promise((resolve) => {
+    const startFade = () => {
+      if (el.closest('#hero')) {
+        emitHeroCursiveStart();
+      }
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          svg.style.opacity = '1';
+        });
+      });
+
+      window.setTimeout(resolve, fadeMs);
+    };
+
+    if (delayMs > 0) {
+      window.setTimeout(startFade, delayMs);
+      return;
+    }
+
+    startFade();
+  });
+}
+
+function showCursiveInstant(el, font) {
+  const svg = getSvg(el);
+
+  renderCursiveGlyphs(el, font);
+  svg.style.opacity = '1';
+  svg.style.transition = '';
+  el.classList.remove('is-loading');
 }
 
 function emitHeroCursiveStart() {
@@ -158,18 +127,17 @@ function emitHeroCursiveStart() {
 }
 
 function runCursiveAnimation(el, font) {
-  if (el.closest('#hero')) {
-    emitHeroCursiveStart();
-  }
-
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion) {
+    if (el.closest('#hero')) {
+      emitHeroCursiveStart();
+    }
     showCursiveInstant(el, font);
     return Promise.resolve();
   }
 
-  return animateCursive(el, font).catch(() => {
+  return fadeInCursive(el, font).catch(() => {
     const glyphs = getGlyphs(el);
     if (glyphs) glyphs.innerHTML = '';
     setCursiveFallback(el);

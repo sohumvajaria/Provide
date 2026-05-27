@@ -80,9 +80,9 @@ function initTypewriter() {
       window.setTimeout(() => runTypewriter(output, cursor, fullText), startDelay);
     };
 
-    const isHeroSubtitle = el.classList.contains('hero-subtitle');
+    const isHeroQuote = el.classList.contains('hero-quote-text');
 
-    if (isHeroSubtitle) {
+    if (isHeroQuote) {
       document.addEventListener('provide:hero-cursive-start', () => start(), { once: true });
       window.setTimeout(() => {
         if (el.dataset.typewriterStarted !== 'true') {

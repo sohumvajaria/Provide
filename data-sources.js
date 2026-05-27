@@ -67,6 +67,22 @@
     });
   }
 
+  function dedupeSnapRetailers(entries) {
+    const byKey = new Map();
+    for (const entry of entries) {
+      const key = entry.name.trim().toLowerCase();
+      const existing = byKey.get(key);
+      if (!existing) {
+        byKey.set(key, entry);
+        continue;
+      }
+      if (!existing.storeType && entry.storeType) {
+        byKey.set(key, { ...existing, storeType: entry.storeType });
+      }
+    }
+    return Array.from(byKey.values());
+  }
+
   function filterByRadius(resources, centerLat, centerLng, radiusMiles) {
     return resources.filter((r) =>
       withinRadius(centerLat, centerLng, r.lat, r.lng, radiusMiles)
@@ -85,10 +101,15 @@
     return data;
   }
 
+  let snapStoreTypeSampleLogged = false;
+
   function mapSnapAttributes(attrs) {
     const lat = parseFloat(attrs.Latitude);
     const lng = parseFloat(attrs.Longitude);
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+    const storeType = String(
+      attrs.Store_Type ?? attrs.store_type ?? attrs.Type ?? ''
+    ).trim();
     return {
       name: attrs.Store_Name || 'SNAP Retailer',
       lat,
@@ -100,8 +121,7 @@
         attrs.Zip_Code,
       ].filter(Boolean).join(', '),
       category: 'snap',
-      storeType:
-        attrs.Store_Type ?? attrs.store_type ?? attrs.Type ?? '',
+      storeType,
     };
   }
 
@@ -215,7 +235,23 @@
         centerLng,
         radiusMiles
       );
-      return dedupeByName([...fromLocal, ...fromApi]);
+      const merged = dedupeSnapRetailers([...fromApi, ...fromLocal]);
+
+      if (!snapStoreTypeSampleLogged && fromApi.length) {
+        const sample = fromApi.find((r) => r.storeType);
+        if (sample) {
+          console.info(
+            '[SNAP] storeType sample:',
+            sample.name,
+            '->',
+            sample.storeType,
+            `(${getSnapStoreCategory(sample.storeType)})`
+          );
+        }
+        snapStoreTypeSampleLogged = true;
+      }
+
+      return merged;
     } catch {
       return fromLocal;
     }
@@ -292,6 +328,48 @@
     const postcode = data.address?.postcode;
     if (postcode && /^\d{5}/.test(postcode)) return postcode.slice(0, 5);
     return null;
+  }
+
+  async function geocodeAddress(query) {
+    const cleaned = query.trim().replace(/\s+/g, ' ');
+    if (!cleaned) return null;
+
+    try {
+      const url = new URL('https://nominatim.openstreetmap.org/search');
+      url.searchParams.set('q', cleaned);
+      url.searchParams.set('countrycodes', 'us');
+      url.searchParams.set('format', 'json');
+      url.searchParams.set('limit', '1');
+      url.searchParams.set('addressdetails', '1');
+
+      const res = await fetch(url.toString(), {
+        headers: { 'User-Agent': 'ProvideApp/1.0' },
+      });
+      if (!res.ok) return null;
+
+      const data = await res.json();
+      if (!data.length) return null;
+
+      const result = data[0];
+      const lat = parseFloat(result.lat);
+      const lng = parseFloat(result.lon);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+
+      const displayName = result.display_name || cleaned;
+      let inNC = false;
+      if (result.address?.state === 'North Carolina') {
+        inNC = true;
+      } else if (
+        displayName.includes('North Carolina') ||
+        displayName.includes(', NC')
+      ) {
+        inNC = true;
+      }
+
+      return { lat, lng, displayName, inNC };
+    } catch {
+      return null;
+    }
   }
 
   async function loadNC211FoodCache() {
@@ -705,6 +783,60 @@
     }
   }
 
+  function normalizeFoodAccessShare(value) {
+    if (value === null || value === undefined) return null;
+    let v = Number(value);
+    if (Number.isNaN(v)) return null;
+    if (v > 1) v = v / 100;
+    return v;
+  }
+
+  function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return [r, g, b];
+  }
+
+  function rgbToHex(r, g, b) {
+    return `#${[r, g, b].map((x) => {
+      const h = Math.round(Math.max(0, Math.min(255, x))).toString(16);
+      return h.length === 1 ? `0${h}` : h;
+    }).join('')}`;
+  }
+
+  function lerpColor(hex1, hex2, t) {
+    const [r1, g1, b1] = hexToRgb(hex1);
+    const [r2, g2, b2] = hexToRgb(hex2);
+    return rgbToHex(
+      r1 + (r2 - r1) * t,
+      g1 + (g2 - g1) * t,
+      b1 + (b2 - b1) * t
+    );
+  }
+
+  function getFoodDesertColor(value) {
+    if (value === null || value === undefined || value === '') return null;
+
+    const v = parseFloat(value);
+    const normalized = v > 1 ? v / 100 : v;
+    if (Number.isNaN(normalized)) return null;
+
+    if (normalized <= 0.2) {
+      const t = normalized / 0.2;
+      return lerpColor('#4ade80', '#facc15', t);
+    }
+    if (normalized <= 0.4) {
+      const t = (normalized - 0.2) / 0.2;
+      return lerpColor('#facc15', '#f97316', t);
+    }
+    if (normalized <= 0.65) {
+      const t = (normalized - 0.4) / 0.25;
+      return lerpColor('#f97316', '#dc2626', t);
+    }
+    return '#dc2626';
+  }
+
   function getNearestStop(lat, lng, stopFeatures) {
     if (!stopFeatures || stopFeatures.length === 0) return null;
 
@@ -753,5 +885,8 @@
     loadTransitData,
     getNearestStop,
     getSnapStoreCategory,
+    getFoodDesertColor,
+    normalizeFoodAccessShare,
+    geocodeAddress,
   };
 })(window);

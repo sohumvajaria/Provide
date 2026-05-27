@@ -42,7 +42,7 @@
       <div id="hero-copy">
         <p class="hero-status" data-reveal>
           <span class="status-dot" aria-hidden="true"></span>
-          PROVIDE · v1 · Food access, mapped
+          PROVIDE · v1 · Food access for every NC resident
         </p>
         <h1
           id="hero-title"
@@ -61,17 +61,23 @@
           class="hero-subtitle"
           data-reveal
           data-reveal-delay="1"
-          data-typewriter
-          data-typewriter-delay="0"
         >
-          Communities deserve to know what’s nearby. Find SNAP retailers, food pantries, free meals, and WIC -> started in Charlotte, expanding nationwide.
+          Communities deserve to know what’s nearby. Find SNAP retailers, food pantries, free meals, and WIC -> started in North Carolina, expanding nationwide.
         </p>
         <a href="explorer.html" class="hero-cta" data-reveal data-reveal-delay="2">Explore the dashboard →</a>
+        <blockquote class="hero-quote" data-reveal data-reveal-delay="3" cite="https://www.farmingwhileblack.org/">
+          <p
+            class="hero-quote-text"
+            data-typewriter
+            data-typewriter-delay="0"
+          >
+            “Food sovereignty is the right of peoples to healthy and culturally appropriate food produced through ecologically sound and sustainable methods.” — Leah Penniman
+          </p>
+        </blockquote>
       </div>
 
       <div id="hero-map-wrap" data-reveal data-reveal-delay="1" data-motion-group>
         <div id="hero-map" aria-live="polite"></div>
-        <div class="hero-map-glow" aria-hidden="true"></div>
       </div>
     </div>
 
@@ -150,7 +156,7 @@
           </div>
           <p class="home-how-step-label">01 — Search</p>
           <h3 class="home-how-step-title">ZIP Discovery</h3>
-          <p class="home-how-step-text" data-typewriter data-typewriter-delay="200">
+          <p class="home-how-step-text">
             Enter a ZIP code and we geocode your area, centering the map on your neighborhood so the search starts where you live.
           </p>
         </article>
@@ -166,7 +172,7 @@
           </div>
           <p class="home-how-step-label">02 — Explore</p>
           <h3 class="home-how-step-title">Live Resource Map</h3>
-          <p class="home-how-step-text" data-typewriter data-typewriter-delay="350">
+          <p class="home-how-step-text">
             SNAP retailers, food pantries, free meal sites, and WIC locations appear on the map; filter by type and adjust radius to see what's nearby.
           </p>
         </article>
@@ -181,7 +187,7 @@
           </div>
           <p class="home-how-step-label">03 — Act</p>
           <h3 class="home-how-step-title">Resources at Hand</h3>
-          <p class="home-how-step-text" data-typewriter data-typewriter-delay="500">
+          <p class="home-how-step-text">
             Compare distance, hours, and contact details for each location, then open directions or call directly from the dashboard.
           </p>
         </article>
@@ -202,10 +208,10 @@
           Every ZIP. Every site.<br />All in one view.
         </h2>
         <p class="home-preview-sub">
-          Charlotte-area resources · SNAP · Food pantries · Free meals · WIC
+          SNAP, pantries, meals, WIC · Food-access gradient · NC bus routes in your search radius
         </p>
       </header>
-      <div id="map-preview-mount" class="home-preview-mount" data-reveal data-reveal-delay="1" data-motion-group aria-label="Explorer map placeholder"></div>
+      <div id="map-preview-mount" class="home-preview-mount" data-reveal data-reveal-delay="1" data-motion-group aria-label="Static preview of the Provide food access explorer"></div>
     </div>
   </section>
 
@@ -217,46 +223,45 @@
     <div class="home-reach-inner">
       <p class="home-reach-eyebrow" data-reveal>FOOD ACCESS REACH</p>
       <div class="home-reach-grid">
-        <button type="button" class="stat-card" data-tilt-card data-reveal data-reveal-delay="1" aria-label="42 plus verified Charlotte resources">
+        <button type="button" class="stat-card" data-tilt-card data-reveal data-reveal-delay="1" aria-label="1800 plus verified food access locations across North Carolina">
           <span class="stat-card-inner">
             <span class="home-reach-value" aria-live="polite">
-              <span class="cursive-text cursive-text--stat is-loading" data-cursive-text="42+" data-font-size="80" data-draw-ms="2000" data-cursive-delay="0">
-                <span class="cursive-fallback">42+</span>
+              <span class="cursive-text cursive-text--stat is-loading" data-cursive-text="1800+" data-font-size="72" data-cursive-delay="0">
+                <span class="cursive-fallback">1800+</span>
                 <svg class="cursive-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="cursive-glyphs"></g></svg>
               </span>
             </span>
-            <span class="stat-card-caption">Verified resources in the Charlotte pilot dataset</span>
+            <span class="stat-card-caption">Verified food access locations mapped across North Carolina</span>
           </span>
         </button>
-        <button type="button" class="stat-card" data-tilt-card data-reveal data-reveal-delay="2" aria-label="4 program types mapped">
+        <button type="button" class="stat-card" data-tilt-card data-reveal data-reveal-delay="2" aria-label="693 SNAP retailers in Mecklenburg County">
           <span class="stat-card-inner">
             <span class="home-reach-value" aria-live="polite">
-              <span class="cursive-text cursive-text--stat is-loading" data-cursive-text="4" data-font-size="96" data-draw-ms="1600" data-cursive-delay="150">
-                <span class="cursive-fallback">4</span>
+              <span class="cursive-text cursive-text--stat is-loading" data-cursive-text="693" data-font-size="88" data-cursive-delay="150">
+                <span class="cursive-fallback">693</span>
                 <svg class="cursive-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="cursive-glyphs"></g></svg>
               </span>
             </span>
-            <span class="stat-card-caption">Program types mapped in the explorer</span>
+            <span class="stat-card-caption">SNAP retailers in Mecklenburg County alone</span>
           </span>
         </button>
-        <button type="button" class="stat-card" data-tilt-card data-reveal data-reveal-delay="3" aria-label="10 mile maximum search radius">
+        <button type="button" class="stat-card" data-tilt-card data-reveal data-reveal-delay="3" aria-label="850 plus pantries meal sites and WIC clinics statewide">
           <span class="stat-card-inner">
             <span class="home-reach-value" aria-live="polite">
-              <span class="cursive-text cursive-text--stat is-loading" data-cursive-text="10 mi" data-font-size="76" data-draw-ms="2200" data-cursive-delay="300">
-                <span class="cursive-fallback">10 mi</span>
+              <span class="cursive-text cursive-text--stat is-loading" data-cursive-text="850+" data-font-size="80" data-cursive-delay="300">
+                <span class="cursive-fallback">850+</span>
                 <svg class="cursive-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="cursive-glyphs"></g></svg>
               </span>
             </span>
-            <span class="stat-card-caption">Maximum search radius from any ZIP</span>
+            <span class="stat-card-caption">Food pantries, free meal sites &amp; WIC clinics statewide</span>
           </span>
         </button>
       </div>
+      <p class="home-stats-source home-reach-source" data-reveal data-reveal-delay="2">Sources: USDA FNS · NC 211 · Food Bank CENC · NC DHHS WIC · USDA ERS</p>
       <div class="home-reach-ticker" data-reveal data-reveal-delay="1" data-motion-group aria-hidden="true">
         <div class="home-reach-ticker-track">
-          <span>Charlotte, NC</span><span>28202</span><span>28206</span><span>28208</span><span>28205</span>
-          <span>Mecklenburg County</span><span>SNAP</span><span>WIC</span><span>Food pantries</span><span>Free meals</span>
-          <span>Charlotte, NC</span><span>28202</span><span>28206</span><span>28208</span><span>28205</span>
-          <span>Mecklenburg County</span><span>SNAP</span><span>WIC</span><span>Food pantries</span><span>Free meals</span>
+          <span>693 SNAP retailers</span><span>502 food pantries</span><span>188 meal sites</span><span>158 WIC clinics</span><span>2,195 NC tracts</span><span>Mecklenburg County</span><span>Charlotte, NC</span>
+          <span>693 SNAP retailers</span><span>502 food pantries</span><span>188 meal sites</span><span>158 WIC clinics</span><span>2,195 NC tracts</span><span>Mecklenburg County</span><span>Charlotte, NC</span>
         </div>
       </div>
     </div>
@@ -283,7 +288,7 @@
       </h2>
       <p class="home-closing-tagline" data-reveal data-reveal-delay="1">Food access intelligence. Local today. Nationwide tomorrow.</p>
       <a href="explorer.html" class="home-closing-cta" data-reveal data-reveal-delay="2">Explore the dashboard →</a>
-      <p class="home-closing-footer" data-reveal data-reveal-delay="3">Built for the People</p>
+      <p class="home-closing-footer" data-reveal data-reveal-delay="3">Made with ❤️ - Alan Cai NCSSM '27, Matthew Gervescu Ballatyne Ridge '28, Sohum Vajaria NCSSM '28</p>
     </div>
   </section>
 

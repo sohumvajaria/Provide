@@ -40,11 +40,29 @@
       </div>
 
       <div id="search-section">
-        <label class="field-label" for="zip-input">ZIP CODE</label>
+        <div class="address-label-row">
+          <label class="field-label" for="address-input">ADDRESS OR ZIP CODE</label>
+          <button id="locate-btn" type="button" class="locate-btn" title="Use my current location">
+            <span class="locate-btn-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="12" cy="11" r="2.25" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="locate-btn-text">Current Location</span>
+          </button>
+        </div>
         <div id="zip-row">
-          <input id="zip-input" type="text" maxlength="5" placeholder="e.g. 28202" />
+          <input
+            type="text"
+            id="address-input"
+            placeholder="e.g. 123 Main St, Charlotte or 28202"
+            autocomplete="street-address"
+            spellcheck="false"
+          />
           <button id="search-btn" type="button">Find</button>
         </div>
+        <span id="address-error" style="display:none" class="input-error"></span>
         <p id="search-status" class="search-status" role="status" aria-live="polite" hidden></p>
         <div id="radius-row">
           <label class="field-label">RADIUS</label>
@@ -63,30 +81,46 @@
             <input type="checkbox" class="filter-cb" data-type="snap" checked />
             <span class="filter-dot snap-dot"></span>
             SNAP Retailers
-          </label>
-          <label class="filter-item filter-item-snap-sub">
-            <input type="checkbox" id="snap-grocery-only" />
-            <span>Grocery stores only</span>
+            <span class="info-tooltip" tabindex="0" aria-label="Stores that accept SNAP/EBT benefits. Indicates different types of them like supermarkets, grocery stores, and convenience stores.">
+              <span class="info-icon">?</span>
+              <span class="info-bubble">Stores that accept SNAP/EBT benefits. Indicates different types of them like supermarkets, grocery stores, and convenience stores.</span>
+            </span>
           </label>
           <label class="filter-item">
             <input type="checkbox" class="filter-cb" data-type="foodbank" checked />
             <span class="filter-dot foodbank-dot"></span>
             Food Pantries
+            <span class="info-tooltip" tabindex="0" aria-label="Free food distribution sites. Hours and eligibility vary; call ahead when possible.">
+              <span class="info-icon">?</span>
+              <span class="info-bubble">Free food distribution sites. Hours and eligibility vary; call ahead when possible.</span>
+            </span>
           </label>
           <label class="filter-item">
             <input type="checkbox" class="filter-cb" data-type="meal-all" checked />
             <span class="filter-dot meal-all-dot"></span>
             Free Meals (all ages)
+            <span class="info-tooltip" tabindex="0" aria-label="Sites serving free meals to anyone regardless of age. Includes soup kitchens and community meal programs.">
+              <span class="info-icon">?</span>
+              <span class="info-bubble">Sites serving free meals to anyone regardless of age. Includes soup kitchens and community meal programs.</span>
+            </span>
           </label>
           <label class="filter-item">
             <input type="checkbox" class="filter-cb" data-type="meal-under18" checked />
             <span class="filter-dot meal-under18-dot"></span>
             Free Meals (under 18)
+            <span class="info-tooltip" tabindex="0" aria-label="Summer meal sites for children and teens 18 and under. Typically available June–August.">
+              <span class="info-icon">?</span>
+              <span class="info-bubble">Summer meal sites for children and teens 18 and under. Typically available June–August.</span>
+            </span>
           </label>
           <label class="filter-item">
             <input type="checkbox" class="filter-cb" data-type="wic" checked />
             <span class="filter-dot wic-dot"></span>
             WIC Locations
+            <span class="info-tooltip" tabindex="0" aria-label="WIC clinics offering nutrition support for pregnant women, new mothers, and children under 5. Appointment usually required.">
+              <span class="info-icon">?</span>
+              <span class="info-bubble">WIC clinics offering nutrition support for pregnant women, new mothers, and children under 5. Appointment usually required.</span>
+            </span>
           </label>
         </div>
       </div>
@@ -97,6 +131,10 @@
         <label class="scarcity-toggle">
           <input type="checkbox" id="food-desert-toggle" class="scarcity-toggle-input" />
           <span class="food-desert-label scarcity-toggle-title">Food Scarcity Tracker</span>
+          <span class="info-tooltip align-right" tabindex="0" aria-label="USDA 2019 data showing low-income census tracts with limited grocery access.">
+            <span class="info-icon">?</span>
+            <span class="info-bubble">USDA 2019 data showing low-income census tracts with limited grocery access.</span>
+          </span>
           <span class="scarcity-badge">USDA</span>
         </label>
 
@@ -105,43 +143,42 @@
         </p>
 
         <div id="food-desert-legend" class="scarcity-legend hidden" hidden>
-          <p class="scarcity-legend-heading">Low food access share</p>
-          <ul class="scarcity-legend-list">
-            <li class="scarcity-legend-item">
-              <span class="scarcity-swatch scarcity-swatch--severe" aria-hidden="true"></span>
-              <span>Severe — 70%+</span>
-            </li>
-            <li class="scarcity-legend-item">
-              <span class="scarcity-swatch scarcity-swatch--high" aria-hidden="true"></span>
-              <span>High — 50–70%</span>
-            </li>
-            <li class="scarcity-legend-item">
-              <span class="scarcity-swatch scarcity-swatch--moderate" aria-hidden="true"></span>
-              <span>Moderate — 30–50%</span>
-            </li>
-            <li class="scarcity-legend-item">
-              <span class="scarcity-swatch scarcity-swatch--low" aria-hidden="true"></span>
-              <span>Low — 15–30%</span>
-            </li>
-            <li class="scarcity-legend-item">
-              <span class="scarcity-swatch scarcity-swatch--minimal" aria-hidden="true"></span>
-              <span>Minimal — under 15%</span>
-            </li>
-          </ul>
-          <p class="scarcity-source">
-            USDA Food Access Research Atlas 2019 ·
-            <a href="https://www.ers.usda.gov/data-products/food-access-research-atlas/"
-               target="_blank"
-               rel="noopener noreferrer">Learn more</a>
-          </p>
+          <div class="food-desert-legend">
+            <div class="legend-title">Food Access Risk</div>
+            <div class="legend-gradient-bar"></div>
+            <div class="legend-labels">
+              <span>Low</span>
+              <span>Moderate</span>
+              <span>High</span>
+              <span>Severe</span>
+            </div>
+            <div class="legend-items">
+              <div class="legend-item">
+                <span class="legend-swatch" style="border: 2.5px solid #7f1d1d; background: transparent;"></span>
+                <span>USDA-designated food desert</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch" style="background:#e5e7eb; border: 1px solid #94a3b8;"></span>
+                <span>No data available</span>
+              </div>
+            </div>
+            <div class="legend-source">Source: USDA Food Access Research Atlas, 2019</div>
+          </div>
         </div>
 
         <div class="overlay-toggle-row" id="transit-toggle-row">
           <label class="scarcity-toggle toggle-label" for="transit-toggle">
             <input type="checkbox" id="transit-toggle" class="scarcity-toggle-input" />
             <span class="toggle-text scarcity-toggle-title">NC bus routes</span>
+            <span class="info-tooltip align-right" tabindex="0" aria-label="NC transit routes within your search radius. Stop markers appear when zoomed in.">
+              <span class="info-icon">?</span>
+              <span class="info-bubble">NC transit routes within your search radius. Stop markers appear when zoomed in.</span>
+            </span>
             <span id="transit-loading" style="display:none;" class="toggle-loading">Loading…</span>
             <span id="transit-error" style="display:none;" class="toggle-error">Failed to load</span>
+            <span id="transit-no-search-msg" class="toggle-warning" style="display:none">
+              Enter a ZIP code first
+            </span>
           </label>
           <p class="scarcity-desc overlay-note">Loads on first use · stop markers appear at zoom 13+</p>
         </div>
@@ -156,15 +193,23 @@
           <div class="results-utility-btns">
             <button type="button" id="copy-link-btn" class="copy-link-btn" style="display:none">
               Copy link
+              <span class="info-tooltip align-left" tabindex="0" aria-label="Copy a shareable link to this exact search: same ZIP, radius, and filters.">
+                <span class="info-icon">?</span>
+                <span class="info-bubble">Copy a shareable link to this exact search: same ZIP, radius, and filters.</span>
+              </span>
             </button>
             <button type="button" id="print-btn" class="copy-link-btn" style="display:none">
               Print list
+              <span class="info-tooltip align-left" tabindex="0" aria-label="Print a formatted list of results to hand to a client.">
+                <span class="info-icon">?</span>
+                <span class="info-bubble">Print a formatted list of results to hand to a client.</span>
+              </span>
             </button>
           </div>
         </div>
         <div id="results-list">
           <div id="results-placeholder">
-            <p>Enter a ZIP code to find food resources near you.</p>
+            <p>Enter an address or ZIP code to find food resources near you.</p>
           </div>
         </div>
       </div>

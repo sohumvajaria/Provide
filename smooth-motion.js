@@ -38,9 +38,33 @@
     initOffscreenMotionPause,
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initOffscreenMotionPause);
-  } else {
+  function initScrollPerf() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let scrollEndTimer = 0;
+    const root = document.documentElement;
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        root.classList.add('is-scrolling');
+        window.clearTimeout(scrollEndTimer);
+        scrollEndTimer = window.setTimeout(() => {
+          root.classList.remove('is-scrolling');
+        }, 140);
+      },
+      { passive: true }
+    );
+  }
+
+  function init() {
     initOffscreenMotionPause();
+    initScrollPerf();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();

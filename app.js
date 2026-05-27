@@ -47,16 +47,35 @@ let foodDesertLayer = null;
 let foodDesertData = null;
 let transitLayer = null;
 let transitStopLayer = null;
+let transitRouteFeatures = [];
 let transitStopFeatures = [];
 let transitDataLoaded = false;
 let transitLoadPromise = null;
+let homeMarker = null;
+
+function isExplorerPreviewEmbed() {
+  return new URLSearchParams(window.location.search).get('preview') === '1';
+}
+
+function lockMapForPreview() {
+  map.dragging.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+  map.boxZoom.disable();
+  map.keyboard.disable();
+  if (map.tap) map.tap.disable();
+  map.getContainer().style.cursor = 'default';
+}
 
 // ─── Init Map ─────────────────────────────────────────────────
 function initMap() {
+  const isPreview = isExplorerPreviewEmbed();
+
   map = L.map('map', {
     center: CHARLOTTE_CENTER,
     zoom: 12,
-    zoomControl: true,
+    zoomControl: !isPreview,
   });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -65,6 +84,10 @@ function initMap() {
   }).addTo(map);
 
   map.on('zoomend', updateTransitStopVisibility);
+
+  if (isPreview) {
+    lockMapForPreview();
+  }
 }
 
 function getActiveCategories() {
@@ -112,14 +135,33 @@ function setRadiusFromHash(radiusParam) {
   });
 }
 
+function getAddressInputValue() {
+  const input = document.getElementById('address-input');
+  if (!input) return '';
+  return input.value.trim().replace(/\s+/g, ' ');
+}
+
+function showAddressError(message) {
+  const errorEl = document.getElementById('address-error');
+  if (!errorEl) return;
+  errorEl.textContent = message;
+  errorEl.style.display = 'block';
+}
+
+function hideAddressError() {
+  const errorEl = document.getElementById('address-error');
+  if (!errorEl) return;
+  errorEl.style.display = 'none';
+}
+
 function updateShareableHash() {
   if (!searchCenter) return;
 
-  const zip = document.getElementById('zip-input')?.value.trim();
-  if (!/^\d{5}$/.test(zip)) return;
+  const address = getAddressInputValue();
+  if (!address) return;
 
   const params = new URLSearchParams();
-  params.set('zip', zip);
+  params.set('address', address);
   params.set('r', String(selectedMiles));
   params.set('cat', getActiveCategoryHashIds().join(','));
 
@@ -143,7 +185,7 @@ function setCopyLinkVisible(visible) {
 function printResourceList() {
   if (!searchCenter) return;
 
-  const zip = document.getElementById('zip-input')?.value.trim() || '';
+  const address = getAddressInputValue() || '';
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -153,7 +195,7 @@ function printResourceList() {
   const header = document.createElement('div');
   header.id = 'print-header';
   header.innerHTML = `
-    <h2>Food resources near ${escapeHtml(zip)} · within ${selectedMiles} miles</h2>
+    <h2>Food resources near ${escapeHtml(address)} · within ${selectedMiles} miles</h2>
     <p>Found via Provide · provide-nc.org · ${escapeHtml(today)}</p>
     <p>For help finding food resources, call 2-1-1</p>
   `;
@@ -170,15 +212,61 @@ function printResourceList() {
   window.print();
 }
 
+async function bootEmbeddedPreview() {
+  document.documentElement.classList.add('explorer-preview-embed');
+
+  const addressInput = document.getElementById('address-input');
+  if (addressInput) addressInput.value = '28202';
+
+  setRadiusFromHash('5');
+  await runSearchAt(CHARLOTTE_CENTER[0], CHARLOTTE_CENTER[1]);
+
+  const foodToggle = document.getElementById('food-desert-toggle');
+  const legend = document.getElementById('food-desert-legend');
+  if (foodToggle) {
+    foodToggle.checked = true;
+    const label = getFoodDesertToggleLabel();
+    if (label) label.textContent = 'Loading...';
+    try {
+      await renderFoodDesertOverlay();
+    } finally {
+      if (foodToggle.checked && label) {
+        label.textContent = SCARCITY_TRACKER_LABEL;
+      }
+    }
+    if (legend) {
+      legend.classList.remove('hidden');
+      legend.hidden = false;
+    }
+  }
+
+  const transitToggleEl = document.getElementById('transit-toggle');
+  if (transitToggleEl && searchCenter) {
+    transitToggleEl.checked = true;
+    await loadTransitOverlay();
+    if (transitDataLoaded) {
+      buildTransitLayers(searchCenter.lat, searchCenter.lng, selectedMiles);
+    }
+  }
+
+  renderAll();
+  if (radiusCircle) radiusCircle.bringToFront();
+  if (homeMarker) homeMarker.bringToFront();
+
+  window.setTimeout(() => map.invalidateSize(), 100);
+  window.setTimeout(() => map.invalidateSize(), 500);
+}
+
 function restoreSearchFromHash() {
   const hash = window.location.hash.slice(1);
   if (!hash) return;
 
   const params = new URLSearchParams(hash);
-  const zip = params.get('zip');
-  if (!zip || !/^\d{5}$/.test(zip)) return;
+  const address = params.get('address') || params.get('zip');
+  if (!address) return;
 
-  document.getElementById('zip-input').value = zip;
+  const addressInput = document.getElementById('address-input');
+  if (addressInput) addressInput.value = address;
 
   const radius = params.get('r');
   if (radius) setRadiusFromHash(radius);
@@ -197,82 +285,149 @@ function escapeHtml(text) {
     .replace(/"/g, '&quot;');
 }
 
-function getFoodDesertStyle(feature) {
-  const val = feature.properties.lapop1share;
-
-  if (val === null || val === undefined) {
-    return { fillOpacity: 0, stroke: false, weight: 0 };
+function getTractFoodAccessShareRaw(properties) {
+  if (properties.lalowi1share != null && properties.lalowi1share !== '') {
+    return properties.lalowi1share;
   }
+  if (properties.lapop1share != null && properties.lapop1share !== '') {
+    return properties.lapop1share;
+  }
+  return null;
+}
 
-  let fillColor;
-  let fillOpacity;
+function getFoodDesertToggleLabel() {
+  const toggle = document.getElementById('food-desert-toggle');
+  if (!toggle) return null;
+  return toggle.closest('.scarcity-toggle')?.querySelector('.food-desert-label') ?? null;
+}
 
-  if (val >= 0.7) {
-    fillColor = '#dc2626';
-    fillOpacity = 0.65;
-  } else if (val >= 0.5) {
-    fillColor = '#ea580c';
-    fillOpacity = 0.55;
-  } else if (val >= 0.3) {
-    fillColor = '#ca8a04';
-    fillOpacity = 0.45;
-  } else if (val >= 0.15) {
-    fillColor = '#65a30d';
-    fillOpacity = 0.25;
-  } else {
-    fillColor = '#16a34a';
-    fillOpacity = 0.10;
+function getFoodDesertStyle(feature) {
+  const { lalowi1share } = feature.properties;
+  const fillColor = window.ProvideDataSources.getFoodDesertColor(lalowi1share);
+
+  if (fillColor === null) {
+    return {
+      fill: true,
+      fillColor: '#e5e7eb',
+      fillOpacity: 0.3,
+      weight: 0.3,
+      color: '#94a3b8',
+      opacity: 1,
+    };
   }
 
   return {
+    fill: true,
     fillColor,
-    fillOpacity,
-    color: fillColor,
+    fillOpacity: 0.65,
     weight: 0.3,
-    opacity: 0.4,
+    color: '#94a3b8',
+    opacity: 1,
   };
+}
+
+function getFoodDesertOutlineStyle() {
+  return {
+    fillOpacity: 0,
+    weight: 2.5,
+    color: '#7f1d1d',
+  };
+}
+
+function formatPovertyRate(p) {
+  if (p.PovertyRate == null || p.PovertyRate === undefined) return 'N/A';
+  const rate = window.ProvideDataSources.normalizeFoodAccessShare(p.PovertyRate);
+  if (rate === null) return 'N/A';
+  return `${(rate * 100).toFixed(0)}%`;
+}
+
+function getTractCountyLine(p) {
+  const county = p.County || p.county;
+  if (!county) return '';
+  return `<span style="color:#999;font-size:11px;">${escapeHtml(county)} County</span><br/>`;
+}
+
+function buildTractTooltipHtml(p) {
+  if (window.ProvideDataSources.getFoodDesertColor(p.lalowi1share) === null) {
+    return `
+      <div class="food-desert-tooltip-inner">
+        <span style="color:#ccc;">Data is not available</span><br/>
+        ${getTractCountyLine(p)}
+      </div>
+    `;
+  }
+
+  const share = window.ProvideDataSources.normalizeFoodAccessShare(
+    getTractFoodAccessShareRaw(p)
+  );
+  if (share === null) return null;
+
+  const pct = `${(share * 100).toFixed(0)}%`;
+  const desertLine =
+    p.LILATracts_1And10 === 1
+      ? '<span style="color:#dc2626;font-weight:600;">⚠️ USDA-designated food desert</span><br/>'
+      : '';
+
+  return `
+    <div class="food-desert-tooltip-inner">
+      <strong style="color:#fff;">${pct}</strong>
+      <span style="color:#ccc;"> of low-income residents have low food access</span><br/>
+      ${desertLine}
+      ${getTractCountyLine(p)}
+    </div>
+  `;
+}
+
+function buildTractPopupHtml(p) {
+  const share = window.ProvideDataSources.normalizeFoodAccessShare(
+    getTractFoodAccessShareRaw(p)
+  );
+  if (share === null) return null;
+
+  const pct = `${(share * 100).toFixed(0)}%`;
+  const desertLine =
+    p.LILATracts_1And10 === 1
+      ? '<p style="color:#dc2626;font-weight:600;margin:0 0 8px;">⚠️ USDA-designated food desert</p>'
+      : '';
+  const poverty = formatPovertyRate(p);
+  const income = p.MedianFamilyIncome
+    ? `$${Number(p.MedianFamilyIncome).toLocaleString()}`
+    : 'N/A';
+  const areaType = p.Urban === 1 ? 'Urban tract' : 'Rural tract';
+  const countyLine = getTractCountyLine(p);
+
+  return `
+    <div style="font-family:sans-serif;font-size:12px;min-width:200px;line-height:1.6;">
+      <p style="margin:0 0 8px;">
+        <strong>${pct}</strong> of low-income residents have low food access
+      </p>
+      ${desertLine}
+      ${countyLine}
+      <span style="color:#666;font-size:11px;">${areaType}</span><br/>
+      <hr style="border-color:#e5e7eb;margin:8px 0;"/>
+      <span style="color:#666;">Poverty rate:</span>
+      <strong>${poverty}</strong><br/>
+      <span style="color:#666;">Median family income:</span>
+      <strong>${income}</strong>
+    </div>
+  `;
 }
 
 function onEachTract(feature, layer) {
   const p = feature.properties;
+  const tooltipHtml = buildTractTooltipHtml(p);
+  if (!tooltipHtml) return;
 
-  if (p.lapop1share === null || p.lapop1share === undefined) return;
-
-  const pct = `${(p.lapop1share * 100).toFixed(0)}%`;
-  const poverty =
-    p.PovertyRate != null && p.PovertyRate !== undefined
-      ? `${(p.PovertyRate * 100).toFixed(0)}%`
-      : 'N/A';
-  const income = p.MedianFamilyIncome
-    ? `$${Number(p.MedianFamilyIncome).toLocaleString()}`
-    : 'N/A';
-  const desertLabel = p.isDesert
-    ? '<span style="color:#dc2626; font-weight:600;">⚠️ USDA Food Desert</span>'
-    : '<span style="color:#16a34a;">✓ Not classified as food desert</span>';
-  const areaType = p.Urban === 1 ? 'Urban tract' : 'Rural tract';
-
-  layer.bindTooltip(`
-    <div style="
-      font-family: sans-serif;
-      font-size: 12px;
-      min-width: 180px;
-      line-height: 1.6;
-    ">
-      ${desertLabel}<br/>
-      <span style="color:#999; font-size:11px;">${areaType}</span><br/>
-      <hr style="border-color:#333; margin:4px 0;"/>
-      <span style="color:#ccc;">Low access population:</span>
-      <strong style="color:#fff;">${pct}</strong><br/>
-      <span style="color:#ccc;">Poverty rate:</span>
-      <strong style="color:#fff;">${poverty}</strong><br/>
-      <span style="color:#ccc;">Median family income:</span>
-      <strong style="color:#fff;">${income}</strong>
-    </div>
-  `, {
+  layer.bindTooltip(tooltipHtml, {
     sticky: true,
     opacity: 0.95,
     className: 'food-desert-tooltip',
   });
+
+  const popupHtml = buildTractPopupHtml(p);
+  if (popupHtml) {
+    layer.bindPopup(popupHtml);
+  }
 }
 
 async function renderFoodDesertOverlay() {
@@ -288,13 +443,33 @@ async function renderFoodDesertOverlay() {
     }
   }
 
-  foodDesertLayer = L.geoJSON(foodDesertData, {
+  removeFoodDesertOverlay();
+
+  const fillLayer = L.geoJSON(foodDesertData, {
     style: getFoodDesertStyle,
     onEachFeature: onEachTract,
   });
 
+  const desertFeatures = foodDesertData.features.filter(
+    (feature) => feature.properties.LILATracts_1And10 === 1
+  );
+
+  const outlineLayer = L.geoJSON(
+    { type: 'FeatureCollection', features: desertFeatures },
+    {
+      style: getFoodDesertOutlineStyle,
+      interactive: false,
+    }
+  );
+
+  foodDesertLayer = L.layerGroup();
+  fillLayer.addTo(foodDesertLayer);
+  outlineLayer.addTo(foodDesertLayer);
   foodDesertLayer.addTo(map);
   foodDesertLayer.bringToBack();
+  if (radiusCircle && map.hasLayer(radiusCircle)) {
+    radiusCircle.bringToFront();
+  }
 }
 
 function removeFoodDesertOverlay() {
@@ -309,8 +484,99 @@ function shouldShowTransitOverlayUi(options) {
   return Boolean(document.getElementById('transit-toggle')?.checked);
 }
 
-function hasActiveSearchResults() {
-  return allResources.length > 0;
+function haversineDistance(centerLat, centerLng, lat, lng) {
+  const R = 3958.8;
+  const dLat = (lat - centerLat) * Math.PI / 180;
+  const dLon = (lng - centerLng) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) ** 2 +
+    Math.cos(centerLat * Math.PI / 180) * Math.cos(lat * Math.PI / 180) *
+    Math.sin(dLon / 2) ** 2;
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function routeIntersectsRadius(routeFeature, centerLat, centerLng, radiusMi) {
+  return routeFeature.geometry.coordinates.some(([lng, lat]) => {
+    return haversineDistance(centerLat, centerLng, lat, lng) <= radiusMi;
+  });
+}
+
+function stopInRadius(stopFeature, centerLat, centerLng, radiusMi) {
+  const [lng, lat] = stopFeature.geometry.coordinates;
+  return haversineDistance(centerLat, centerLng, lat, lng) <= radiusMi;
+}
+
+function showTransitNoSearchMessage() {
+  const msgEl = document.getElementById('transit-no-search-msg');
+  if (!msgEl) return;
+  msgEl.style.display = 'inline';
+  setTimeout(() => {
+    msgEl.style.display = 'none';
+  }, 3000);
+}
+
+function buildTransitLayers(centerLat, centerLng, radiusMi) {
+  if (transitLayer) {
+    map.removeLayer(transitLayer);
+    transitLayer = null;
+  }
+  if (transitStopLayer) {
+    map.removeLayer(transitStopLayer);
+    transitStopLayer = null;
+  }
+
+  const routesInRadius = transitRouteFeatures.filter((feature) =>
+    routeIntersectsRadius(feature, centerLat, centerLng, radiusMi)
+  );
+  const stopsInRadius = transitStopFeatures.filter((feature) =>
+    stopInRadius(feature, centerLat, centerLng, radiusMi)
+  );
+
+  transitLayer = L.layerGroup();
+  routesInRadius.forEach((feature) => {
+    const color = feature.properties.color || '#6B7280';
+    const latlngs = feature.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+    const line = L.polyline(latlngs, { color, weight: 2.5, opacity: 0.75 });
+    const routeName = escapeHtml(
+      `${feature.properties.route_short_name || ''} ${feature.properties.route_long_name || ''}`.trim()
+    );
+    const agencyName = escapeHtml(feature.properties.agency_name || '');
+    line.bindPopup(
+      `<strong>${routeName}</strong><br>` +
+      `<span style="color:#666;font-size:12px">${agencyName}</span>`
+    );
+    transitLayer.addLayer(line);
+  });
+
+  transitStopLayer = L.layerGroup();
+  stopsInRadius.forEach((feature) => {
+    const [lng, lat] = feature.geometry.coordinates;
+    const marker = L.circleMarker([lat, lng], {
+      radius: 4,
+      fillColor: '#ffffff',
+      fillOpacity: 1,
+      color: '#555555',
+      weight: 1.5,
+    });
+    marker.bindPopup(
+      `<strong>${escapeHtml(feature.properties.stop_name)}</strong><br>` +
+      '<span style="color:#666;font-size:12px">Bus stop</span>'
+    );
+    transitStopLayer.addLayer(marker);
+  });
+
+  if (document.getElementById('transit-toggle')?.checked) {
+    transitLayer.addTo(map);
+  }
+  updateTransitStopVisibility();
+}
+
+function refreshTransitLayers() {
+  if (!transitDataLoaded) return;
+  if (!document.getElementById('transit-toggle')?.checked) return;
+  if (!searchCenter) return;
+
+  buildTransitLayers(searchCenter.lat, searchCenter.lng, selectedMiles);
 }
 
 async function loadTransitOverlay(options = {}) {
@@ -343,51 +609,10 @@ async function loadTransitOverlayWork(options = {}) {
 
   transitDataLoaded = true;
 
-  const routeFeatures = geojson.features.filter((f) => f.properties.layer === 'route');
-  const stopFeatures = geojson.features.filter((f) => f.properties.layer === 'stop');
-  transitStopFeatures = stopFeatures;
+  transitRouteFeatures = geojson.features.filter((f) => f.properties.layer === 'route');
+  transitStopFeatures = geojson.features.filter((f) => f.properties.layer === 'stop');
 
-  transitLayer = L.layerGroup();
-  routeFeatures.forEach((feature) => {
-    const color = feature.properties.color || '#6B7280';
-    const latlngs = feature.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
-    const line = L.polyline(latlngs, { color, weight: 2.5, opacity: 0.75 });
-    const routeName = escapeHtml(
-      `${feature.properties.route_short_name || ''} ${feature.properties.route_long_name || ''}`.trim()
-    );
-    const agencyName = escapeHtml(feature.properties.agency_name || '');
-    line.bindPopup(
-      `<strong>${routeName}</strong><br>` +
-      `<span style="color:#666;font-size:12px">${agencyName}</span>`
-    );
-    transitLayer.addLayer(line);
-  });
-
-  transitStopLayer = L.layerGroup();
-  stopFeatures.forEach((feature) => {
-    const [lng, lat] = feature.geometry.coordinates;
-    const marker = L.circleMarker([lat, lng], {
-      radius: 4,
-      fillColor: '#ffffff',
-      fillOpacity: 1,
-      color: '#555555',
-      weight: 1.5,
-    });
-    marker.bindPopup(
-      `<strong>${escapeHtml(feature.properties.stop_name)}</strong><br>` +
-      '<span style="color:#666;font-size:12px">Bus stop</span>'
-    );
-    transitStopLayer.addLayer(marker);
-  });
-
-  if (document.getElementById('transit-toggle')?.checked) {
-    transitLayer.addTo(map);
-  }
-  updateTransitStopVisibility();
-
-  if (hasActiveSearchResults()) {
-    renderAll();
-  }
+  refreshTransitLayers();
 }
 
 function updateTransitStopVisibility() {
@@ -420,7 +645,7 @@ function showFoodDesertError() {
   const toggle = document.getElementById('food-desert-toggle');
   if (toggle) {
     toggle.checked = false;
-    const label = toggle.parentElement.querySelector('.food-desert-label');
+    const label = getFoodDesertToggleLabel();
     if (label) {
       label.textContent = `${SCARCITY_TRACKER_LABEL} (unavailable)`;
     }
@@ -543,15 +768,105 @@ function buildPopupHtml(resource) {
   return appendTransitPopupBlock(popupHtml, resource.lat, resource.lng);
 }
 
-// ─── Geocode ZIP ──────────────────────────────────────────────
-async function geocodeZip(zip) {
-  const res = await fetch(
-    `https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=US&format=json&limit=1`
-  );
-  const data = await res.json();
-  if (!data.length) return null;
-  const result = data[0];
-  return { lat: parseFloat(result.lat), lng: parseFloat(result.lon) };
+// ─── Search ───────────────────────────────────────────────────
+async function runSearchAt(lat, lng, options = {}) {
+  hideAddressError();
+
+  if (options.showHomeMarker) {
+    setHomeMarker(lat, lng);
+  } else {
+    clearHomeMarker();
+  }
+
+  searchCenter = { lat, lng };
+  map.setView([lat, lng], 13);
+  drawRadiusCircle(lat, lng, selectedMiles);
+  map.invalidateSize();
+  await loadResourcesAt(lat, lng);
+}
+
+async function doSearch() {
+  const addressInput = getAddressInputValue();
+
+  if (!addressInput) {
+    setCopyLinkVisible(false);
+    showAddressError('Please enter an address or ZIP code.');
+    return;
+  }
+
+  if (!window.ProvideDataSources) {
+    showResultsMessage('<p>Data layer failed to load. Refresh the page.</p>');
+    return;
+  }
+
+  let geocoded;
+  try {
+    geocoded = await window.ProvideDataSources.geocodeAddress(addressInput);
+  } catch {
+    geocoded = null;
+  }
+
+  if (!geocoded) {
+    searchGeneration += 1;
+    setLoading(false);
+    setCopyLinkVisible(false);
+    clearHomeMarker();
+    showResultsMessage('<p>Address not found</p>');
+    if (radiusCircle) {
+      map.removeLayer(radiusCircle);
+      radiusCircle = null;
+    }
+    searchCenter = null;
+    allResources = [];
+    applyStatsCounts(countResourcesByCategory([]));
+    return;
+  }
+
+  if (!geocoded.inNC) {
+    showAddressError(
+      'This address is outside NC — please enter a North Carolina address or ZIP code.'
+    );
+    return;
+  }
+
+  await runSearchAt(geocoded.lat, geocoded.lng, {
+    showHomeMarker: !isZipOnlyQuery(addressInput),
+  });
+}
+
+function isZipOnlyQuery(query) {
+  return /^\d{5}$/.test(query);
+}
+
+function createHomeMarkerIcon() {
+  return L.divIcon({
+    className: 'home-marker-wrap',
+    html: `
+      <div class="home-marker" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 10.5L12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5z" fill="currentColor"/>
+        </svg>
+      </div>
+    `,
+    iconSize: [34, 34],
+    iconAnchor: [17, 34],
+  });
+}
+
+function clearHomeMarker() {
+  if (homeMarker) {
+    map.removeLayer(homeMarker);
+    homeMarker = null;
+  }
+}
+
+function setHomeMarker(lat, lng) {
+  clearHomeMarker();
+  homeMarker = L.marker([lat, lng], {
+    icon: createHomeMarkerIcon(),
+    zIndexOffset: 1000,
+  });
+  homeMarker.addTo(map);
 }
 
 function clearMarkers() {
@@ -595,6 +910,7 @@ function renderMarkers(activeCategories) {
   });
 
   if (foodDesertLayer) foodDesertLayer.bringToBack();
+  if (homeMarker) homeMarker.bringToFront();
 
   return visible;
 }
@@ -771,6 +1087,8 @@ function renderAll() {
     updateShareableHash();
     setCopyLinkVisible(true);
   }
+
+  refreshTransitLayers();
 }
 
 async function loadResourcesAt(lat, lng) {
@@ -807,52 +1125,6 @@ async function loadResourcesAt(lat, lng) {
   renderAll();
 }
 
-// ─── Search ───────────────────────────────────────────────────
-async function doSearch() {
-  const zip = document.getElementById('zip-input').value.trim();
-  if (!/^\d{5}$/.test(zip)) {
-    setCopyLinkVisible(false);
-    showResultsMessage('<p>Enter a valid 5-digit ZIP code.</p>');
-    return;
-  }
-
-  if (!window.ProvideDataSources) {
-    showResultsMessage('<p>Data layer failed to load. Refresh the page.</p>');
-    return;
-  }
-
-  let center;
-  try {
-    center = await geocodeZip(zip);
-  } catch {
-    center = null;
-  }
-
-  if (!center) {
-    searchGeneration += 1;
-    setLoading(false);
-    setCopyLinkVisible(false);
-    showResultsMessage('<p>ZIP code not found</p>');
-    if (radiusCircle) {
-      map.removeLayer(radiusCircle);
-      radiusCircle = null;
-    }
-    searchCenter = null;
-    allResources = [];
-    applyStatsCounts(countResourcesByCategory([]));
-    return;
-  }
-
-  searchCenter = center;
-  const { lat, lng } = center;
-
-  map.setView([lat, lng], 13);
-  drawRadiusCircle(lat, lng, selectedMiles);
-  map.invalidateSize();
-
-  await loadResourcesAt(lat, lng);
-}
-
 // ─── Loading ──────────────────────────────────────────────────
 function setLoading(on) {
   const btn = document.getElementById('search-btn');
@@ -867,9 +1139,80 @@ function setLoading(on) {
 
 // ─── Event Listeners ──────────────────────────────────────────
 document.getElementById('search-btn').addEventListener('click', doSearch);
-document.getElementById('zip-input').addEventListener('keydown', (e) => {
+document.getElementById('address-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') doSearch();
 });
+document.getElementById('address-input').addEventListener('input', () => {
+  hideAddressError();
+});
+
+function setLocateBtnLoading(isLoading) {
+  const btn = document.getElementById('locate-btn');
+  if (!btn) return;
+  const textEl = btn.querySelector('.locate-btn-text');
+  btn.disabled = isLoading;
+  if (textEl) textEl.textContent = isLoading ? 'Locating...' : 'Current Location';
+}
+
+const locateBtn = document.getElementById('locate-btn');
+if (locateBtn) {
+  locateBtn.addEventListener('click', () => {
+    if (!navigator.geolocation) {
+      showAddressError('Geolocation is not supported by your browser.');
+      return;
+    }
+
+    setLocateBtnLoading(true);
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+        const url =
+          `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&addressdetails=1`;
+
+        try {
+          const res = await fetch(url, {
+            headers: {
+              'Accept-Language': 'en',
+              'User-Agent': 'ProvideApp/1.0',
+            },
+          });
+          const data = await res.json();
+
+          const inNC = data.address?.state === 'North Carolina';
+          if (!inNC) {
+            showAddressError('Your current location is outside NC.');
+            setLocateBtnLoading(false);
+            return;
+          }
+
+          const displayAddress = data.display_name || `${latitude}, ${longitude}`;
+          const addressInput = document.getElementById('address-input');
+          if (addressInput) addressInput.value = displayAddress;
+          hideAddressError();
+
+          await runSearchAt(latitude, longitude, { showHomeMarker: true });
+        } catch {
+          showAddressError(
+            'Could not detect your location. Try entering an address manually.'
+          );
+        }
+
+        setLocateBtnLoading(false);
+      },
+      (err) => {
+        const messages = {
+          1: 'Location access denied. Please enter an address manually.',
+          2: 'Could not determine your location. Try entering an address manually.',
+          3: 'Location request timed out. Try entering an address manually.',
+        };
+        showAddressError(messages[err.code] || 'Location unavailable.');
+        setLocateBtnLoading(false);
+      },
+      { timeout: 10000, maximumAge: 60000 }
+    );
+  });
+}
 
 document.querySelectorAll('.radius-btn').forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -924,13 +1267,20 @@ const transitToggle = document.getElementById('transit-toggle');
 if (transitToggle) {
   transitToggle.addEventListener('change', async function () {
     if (this.checked) {
+      if (!searchCenter) {
+        this.checked = false;
+        showTransitNoSearchMessage();
+        return;
+      }
+
       const loadingEl = document.getElementById('transit-loading');
       if (!transitDataLoaded && transitLoadPromise && loadingEl) {
         loadingEl.style.display = 'inline';
       }
       await loadTransitOverlay();
-      if (transitLayer && transitDataLoaded) transitLayer.addTo(map);
-      updateTransitStopVisibility();
+      if (transitDataLoaded) {
+        buildTransitLayers(searchCenter.lat, searchCenter.lng, selectedMiles);
+      }
     } else {
       const loadingEl = document.getElementById('transit-loading');
       const errorEl = document.getElementById('transit-error');
@@ -945,18 +1295,22 @@ if (transitToggle) {
 const foodDesertToggle = document.getElementById('food-desert-toggle');
 if (foodDesertToggle) {
   foodDesertToggle.addEventListener('change', async (e) => {
+    const toggle = e.target;
     const legend = document.getElementById('food-desert-legend');
-    const label = e.target.nextElementSibling;
+    const label = getFoodDesertToggleLabel();
 
-    if (e.target.checked) {
+    if (toggle.checked) {
       if (label) label.textContent = 'Loading...';
-      await renderFoodDesertOverlay();
-      if (e.target.checked) {
-        if (label) label.textContent = SCARCITY_TRACKER_LABEL;
-        if (legend) {
-          legend.classList.remove('hidden');
-          legend.hidden = false;
+      try {
+        await renderFoodDesertOverlay();
+      } finally {
+        if (toggle.checked && label) {
+          label.textContent = SCARCITY_TRACKER_LABEL;
         }
+      }
+      if (toggle.checked && legend) {
+        legend.classList.remove('hidden');
+        legend.hidden = false;
       }
     } else {
       removeFoodDesertOverlay();
@@ -964,6 +1318,7 @@ if (foodDesertToggle) {
         legend.classList.add('hidden');
         legend.hidden = true;
       }
+      if (label) label.textContent = SCARCITY_TRACKER_LABEL;
     }
   });
 }
@@ -971,4 +1326,8 @@ if (foodDesertToggle) {
 // ─── Boot ─────────────────────────────────────────────────────
 initMap();
 loadTransitOverlay({ silent: true });
-restoreSearchFromHash();
+if (isExplorerPreviewEmbed()) {
+  bootEmbeddedPreview();
+} else {
+  restoreSearchFromHash();
+}
