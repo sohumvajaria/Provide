@@ -13,6 +13,8 @@
 </head>
 <body class="page-home">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <section id="hero" aria-label="Provide home">
     <nav id="hero-nav">
       <a href="index.html" class="nav-logo">
@@ -38,6 +40,7 @@
       </div>
     </nav>
 
+    <main id="main-content">
     <div id="hero-inner">
       <div id="hero-copy">
         <p class="hero-status" data-reveal>
@@ -64,6 +67,7 @@
         >
           Communities deserve to know what’s nearby. Find SNAP retailers, food pantries, free meals, and WIC -> started in North Carolina, expanding nationwide.
         </p>
+        <p id="hero-nearby-count" class="hero-nearby-count" role="status" aria-live="polite" hidden></p>
         <a href="explorer.html" class="hero-cta" data-reveal data-reveal-delay="2">Explore the dashboard →</a>
         <blockquote class="hero-quote" data-reveal data-reveal-delay="3" cite="https://www.farmingwhileblack.org/">
           <p
@@ -80,6 +84,7 @@
         <div id="hero-map" aria-live="polite"></div>
       </div>
     </div>
+    </main>
 
     <a href="#stats" class="hero-scroll" aria-label="Scroll to statistics">
       <span class="hero-scroll-line"></span>
@@ -288,7 +293,7 @@
       </h2>
       <p class="home-closing-tagline" data-reveal data-reveal-delay="1">Food access intelligence. Local today. Nationwide tomorrow.</p>
       <a href="explorer.html" class="home-closing-cta" data-reveal data-reveal-delay="2">Explore the dashboard →</a>
-      <p class="home-closing-footer" data-reveal data-reveal-delay="3">Made with ❤️ - Alan Cai NCSSM '27, Matthew Gervescu Ballatyne Ridge '28, Sohum Vajaria NCSSM '28</p>
+      <p class="home-closing-footer" data-reveal data-reveal-delay="3">Made with ❤️ - Alan Cai NCSSM '27, Matthew Gervescu Ballantyne Ridge '28, Sohum Vajaria NCSSM '28</p>
     </div>
   </section>
 
@@ -302,5 +307,7 @@
   <script defer src="hero-map.js"></script>
   <script defer src="map-preview.js"></script>
   <script defer src="stat-tilt.js"></script>
+  <script defer src="data-sources.js"></script>
+  <script defer src="home-nearby.js"></script>
 </body>
 </html>

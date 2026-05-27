@@ -13,11 +13,13 @@
 </head>
 <body class="page-explorer">
 
+  <a class="skip-link" href="#app">Skip to main content</a>
+
   <div id="app">
 
     <aside id="sidebar">
       <div id="sidebar-header">
-        <a href="index.html" class="sidebar-home-link">
+        <a href="index.html" class="sidebar-home-link" aria-label="Provide home">
           <svg class="sidebar-sprout nav-sprout" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path class="nav-beanstalk-soil" d="M8.5 27.6Q16 26.4 23.5 27.6"/>
             <path class="nav-beanstalk-stem" d="M16 27.4C15.1 23.2 14.6 18.8 15.6 14.4C16.6 10.2 16.1 6.2 14.8 3.4"/>
@@ -216,9 +218,9 @@
     </aside>
 
     <div id="map-container">
-      <div id="map"></div>
+      <div id="map" role="region" aria-label="Food resource map"></div>
 
-      <div id="detail-panel" class="hidden">
+      <div id="detail-panel" class="hidden" role="dialog" aria-modal="true" aria-labelledby="detail-name">
         <button id="detail-close" type="button" aria-label="Close details">&times;</button>
         <div id="detail-type-badge"></div>
         <h2 id="detail-name"></h2>

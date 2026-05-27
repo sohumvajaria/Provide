@@ -122,6 +122,7 @@
       ].filter(Boolean).join(', '),
       category: 'snap',
       storeType,
+      source: 'USDA SNAP',
     };
   }
 
@@ -182,7 +183,10 @@
       }
     }
 
-    snapLocalCache = dedupeByName(merged);
+    snapLocalCache = dedupeByName(merged).map((r) => ({
+      ...r,
+      source: 'USDA SNAP',
+    }));
     return snapLocalCache;
   }
 
@@ -288,6 +292,7 @@
       lng,
       address: address || 'Charlotte, NC',
       category: 'food_bank',
+      source: 'Feeding America',
     };
   }
 
@@ -308,12 +313,30 @@
     const defaultName =
       category === 'free_meals_all_ages' ? 'Free Meal Site' : 'Food Pantry';
 
+    const phone =
+      doc.phone ||
+      doc.phoneNumber ||
+      doc.phoneMain ||
+      doc.phoneMainPhone ||
+      '';
+    const hours =
+      category === 'free_meals_all_ages'
+        ? doc.hours ||
+          doc.hoursOfOperation ||
+          doc.serviceHours ||
+          doc.operationHours ||
+          null
+        : null;
+
     return {
       name: (doc.nameService || doc.nameOrganization || defaultName).trim(),
       lat,
       lng,
       address: address || 'North Carolina',
       category,
+      phone: phone ? String(phone).trim() : '',
+      hours: hours ? String(hours).trim() : null,
+      source: 'NC 211',
     };
   }
 
@@ -379,7 +402,12 @@
       if (res.ok) {
         const rows = await res.json();
         if (Array.isArray(rows) && rows.length) {
-          nc211FoodCache = rows;
+          nc211FoodCache = rows.map((r) => ({
+            ...r,
+            phone: r.phone ? String(r.phone).trim() : '',
+            hours: r.hours ? String(r.hours).trim() : null,
+            source: 'NC 211',
+          }));
           return nc211FoodCache;
         }
       }
@@ -464,7 +492,9 @@
       lng,
       address,
       phone: row.phone ? String(row.phone) : '',
+      hours: row.hours ? String(row.hours).trim() : null,
       category: 'free_meals_all_ages',
+      source: 'NC 211',
     };
   }
 
@@ -521,6 +551,8 @@
         .replace(/\s+/g, ' ')
         .trim(),
       category: 'food_bank',
+      phone: loc.phone ? String(loc.phone).trim() : '',
+      source: 'Food Bank CENC FoodFinder',
     };
   }
 
@@ -550,7 +582,11 @@
       if (res.ok) {
         const rows = await res.json();
         if (Array.isArray(rows) && rows.length) {
-          foodFinderCache = rows;
+          foodFinderCache = rows.map((r) => ({
+            ...r,
+            phone: r.phone ? String(r.phone).trim() : '',
+            source: 'Food Bank CENC FoodFinder',
+          }));
           return foodFinderCache;
         }
       }
@@ -642,6 +678,7 @@
       lng,
       address: String(address).trim(),
       category: 'free_meals_under_18',
+      source: 'USDA Meals for Kids',
     };
   }
 
@@ -724,6 +761,11 @@
         Number.isFinite(r.lat) &&
         Number.isFinite(r.lng)
     );
+    wicNorthCarolinaCache = wicNorthCarolinaCache.map((r) => ({
+      ...r,
+      phone: r.phone ? String(r.phone).trim() : '',
+      source: 'NC DHHS WIC Directory',
+    }));
     console.log(`Loaded ${wicNorthCarolinaCache.length} NC WIC clinics`);
     return wicNorthCarolinaCache;
   }

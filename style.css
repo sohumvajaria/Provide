@@ -381,6 +381,15 @@ html.is-scrolling .home-reach-ticker-track {
   font-weight: 600;
 }
 
+.hero-nearby-count {
+  margin-top: -8px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--leaf);
+  letter-spacing: 0.02em;
+}
+
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -1151,6 +1160,7 @@ body.page-explorer {
 }
 
 body.page-explorer {
+  /* Explorer stays "light" by default; themes override variables at html[data-theme] */
   --bg: var(--cream);
   --surface: #ffffff;
   --border: color-mix(in srgb, var(--leaf) 20%, var(--cream-dk));
@@ -1932,6 +1942,11 @@ body.page-explorer .result-card:hover {
   border-color: var(--accent);
 }
 
+.result-card:focus-visible {
+  outline: 2px solid var(--leaf);
+  outline-offset: 3px;
+}
+
 .result-name {
   font-size: 13px;
   font-weight: 600;
@@ -2481,6 +2496,58 @@ body.page-explorer .leaflet-control-attribution {
   }
   #app { flex-direction: column; }
   .nav-actions { gap: 16px; }
+
+  .drawer-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Detail panel becomes a bottom sheet */
+  #detail-panel {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    top: auto;
+    width: auto;
+    max-height: 70vh;
+    overflow: auto;
+    border-radius: 16px;
+    animation: none;
+    box-shadow: 0 18px 48px rgba(0,0,0,0.28);
+  }
+
+  body.page-explorer #detail-panel {
+    right: 12px;
+    top: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Collapsible bottom drawer behavior */
+  body.page-explorer.drawer-collapsed #sidebar {
+    height: 72px;
+    overflow: hidden;
+  }
+
+  body.page-explorer.drawer-collapsed #results-section,
+  body.page-explorer.drawer-collapsed #filter-section,
+  body.page-explorer.drawer-collapsed #scarcity-section,
+  body.page-explorer.drawer-collapsed #search-section {
+    display: none;
+  }
+
+  body.page-explorer.drawer-collapsed #sidebar-header {
+    border-bottom: none;
+  }
+
+  body.page-explorer.drawer-collapsed #map-container {
+    height: calc(100vh - 72px);
+    height: calc(100dvh - 72px);
+  }
 }
 
 /* ─── Info tooltips ──────────────────────────────────────────── */
@@ -2590,6 +2657,18 @@ body.page-explorer .leaflet-control-attribution {
   font-size: 12px;
   color: #6b7280;
   line-height: 1.5;
+}
+
+.popup-source-chip,
+.source-chip {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  margin-top: 0;
 }
 
 .toggle-loading {
