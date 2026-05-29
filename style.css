@@ -38,6 +38,12 @@ html {
   scroll-behavior: auto;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 html, body {
   min-height: 100%;
 }
@@ -52,6 +58,15 @@ body {
 
 body.page-home {
   -webkit-overflow-scrolling: touch;
+}
+
+.page-home .home-stats,
+.page-home .home-how,
+.page-home .home-preview,
+.page-home .home-reach,
+.page-home .home-closing,
+.page-home .food-divider {
+  contain: paint;
 }
 
 /* ─── Hero (landing) ────────────────────────────────────────── */
@@ -71,6 +86,7 @@ body.page-home {
   align-items: center;
   justify-content: space-between;
   padding: 28px 48px;
+  isolation: isolate;
 }
 
 .nav-logo {
@@ -184,6 +200,7 @@ body.page-home {
   max-width: 520px;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
 }
 
 .hero-presenting {
@@ -211,8 +228,8 @@ body.page-home {
 }
 
 .cursive-text.is-loading .cursive-svg,
-.hero-title.is-loading .cursive-svg,
-.hero-title.is-loading .hero-title-svg {
+.hero-title.is-loading:not(.is-cursive-ready) .cursive-svg,
+.hero-title.is-loading:not(.is-cursive-ready) .hero-title-svg {
   opacity: 0;
 }
 
@@ -313,6 +330,16 @@ body.page-home {
   object-position: center;
 }
 
+[data-motion-group] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+#hero [data-motion-group] {
+  transform: none;
+  backface-visibility: visible;
+}
+
 /* ─── Scroll reveal ─────────────────────────────────────────────── */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
@@ -340,7 +367,10 @@ body.page-home {
 /* Pause decorative loops when off-screen or while scrolling */
 .motion-paused,
 .motion-paused *,
-html.is-scrolling .home-reach-ticker-track {
+html.is-scrolling .home-reach-ticker-track,
+html.is-scrolling .hero-dot,
+html.is-scrolling .hero-map-shimmer,
+html.is-scrolling .typewriter-cursor {
   animation-play-state: paused !important;
 }
 
@@ -428,6 +458,64 @@ html.is-scrolling .home-reach-ticker-track {
   width: 100%;
   height: 100%;
   cursor: default;
+}
+
+#hero-map.is-map-loading {
+  background: var(--leaf-lt);
+}
+
+.hero-map-placeholder {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-map-placeholder-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-map-placeholder-state {
+  fill: var(--leaf-lt);
+  stroke: rgba(45, 106, 79, 0.35);
+  stroke-width: 0.6;
+}
+
+.hero-map-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.42) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  animation: hero-map-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-map-shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-map-shimmer {
+    animation: none;
+    opacity: 0.2;
+  }
+}
+
+#hero-map:not(.is-map-loading) .hero-map-placeholder {
+  display: none;
 }
 
 #hero-map svg {
@@ -555,13 +643,15 @@ html.is-scrolling .home-reach-ticker-track {
   text-align: center;
   font-family: inherit;
   color: inherit;
-  transform: perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform: perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateZ(0);
+  backface-visibility: hidden;
   transition:
     box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.25s ease;
 }
 
 .stat-card.is-hovering {
+  will-change: transform, box-shadow;
   transition:
     transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.2s ease,
@@ -925,16 +1015,11 @@ html.is-scrolling .home-reach-ticker-track {
   transform: translateZ(0);
 }
 
-.explorer-preview-stage {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.explorer-preview-frame {
+.explorer-preview-image {
   display: block;
-  border: 0;
-  pointer-events: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1280 / 720;
 }
 
 /* ─── Home reach stats ────────────────────────────────────────── */
@@ -982,6 +1067,8 @@ html.is-scrolling .home-reach-ticker-track {
   overflow: hidden;
   padding: 18px 0 22px;
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  contain: paint;
+  transform: translateZ(0);
 }
 
 .home-reach-ticker-track {
@@ -989,6 +1076,8 @@ html.is-scrolling .home-reach-ticker-track {
   gap: 28px;
   width: max-content;
   animation: reach-ticker 36s linear infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .home-reach-ticker-track span {

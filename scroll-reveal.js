@@ -15,6 +15,8 @@ function initScrollReveal() {
     return;
   }
 
+  document.querySelectorAll('#hero [data-reveal]').forEach(revealElement);
+
   if (typeof IntersectionObserver === 'undefined') {
     revealEls.forEach(revealElement);
     return;
@@ -40,10 +42,11 @@ function initScrollReveal() {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+      for (let i = 0; i < entries.length; i += 1) {
+        const entry = entries[i];
+        if (!entry.isIntersecting) continue;
         queueReveal(entry.target);
-      });
+      }
     },
     { threshold: REVEAL_THRESHOLD, rootMargin: REVEAL_ROOT_MARGIN }
   );

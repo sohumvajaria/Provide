@@ -1,8 +1,27 @@
 const STAT_TILT_MAX_DEG = 9;
 const STAT_SHADOW_OFFSET_PX = 16;
 
+function isPageScrolling() {
+  if (window.ProvideMotion && typeof window.ProvideMotion.isScrolling === 'function') {
+    return window.ProvideMotion.isScrolling();
+  }
+  return document.documentElement.classList.contains('is-scrolling');
+}
+
+function cacheStatCardRect(card) {
+  card.__tiltRect = card.getBoundingClientRect();
+}
+
+function clearStatCardRect(card) {
+  card.__tiltRect = null;
+}
+
 function applyStatCardPointer(card, clientX, clientY) {
-  const rect = card.getBoundingClientRect();
+  if (isPageScrolling()) return;
+
+  const rect = card.__tiltRect;
+  if (!rect || !rect.width || !rect.height) return;
+
   const xPct = ((clientX - rect.left) / rect.width) * 100;
   const yPct = ((clientY - rect.top) / rect.height) * 100;
   const px = xPct / 100 - 0.5;
@@ -22,6 +41,7 @@ function applyStatCardPointer(card, clientX, clientY) {
 
 function resetStatCardPointer(card) {
   card.classList.remove('is-hovering');
+  clearStatCardRect(card);
   card.style.setProperty('--pointer-x', '50%');
   card.style.setProperty('--pointer-y', '50%');
   card.style.setProperty('--tilt-x', '0deg');
@@ -41,6 +61,22 @@ function initStatTilt() {
       ? window.ProvideMotion.bindRafPointer
       : null;
 
+  let resizeTimer = 0;
+  window.addEventListener(
+    'resize',
+    () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => {
+        cards.forEach((card) => {
+          if (card.classList.contains('is-hovering')) {
+            cacheStatCardRect(card);
+          }
+        });
+      }, 200);
+    },
+    { passive: true }
+  );
+
   cards.forEach((card) => {
     card.addEventListener('click', () => {
       window.location.href = 'explorer.html';
@@ -54,9 +90,10 @@ function initStatTilt() {
 
     card.addEventListener('mouseenter', () => {
       card.classList.add('is-hovering');
+      cacheStatCardRect(card);
     });
 
-    card.addEventListener('mousemove', onPointer);
+    card.addEventListener('mousemove', onPointer, { passive: true });
 
     card.addEventListener('mouseleave', () => {
       resetStatCardPointer(card);

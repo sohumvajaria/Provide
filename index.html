@@ -8,7 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/allura/Allura-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" as="script" crossorigin />
+  <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" as="script" crossorigin />
+  <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -78,7 +82,7 @@
           data-reveal
           data-reveal-delay="1"
         >
-          Communities deserve to know what’s nearby. Find SNAP retailers, food pantries, free meals, and WIC -> started in North Carolina, expanding nationwide.
+          Communities deserve to know what’s nearby. Find SNAP retailers, food pantries, free meals, and WIC → started in North Carolina, expanding nationwide.
         </p>
         <p id="hero-nearby-count" class="hero-nearby-count" role="status" aria-live="polite" hidden></p>
         <a href="explorer.html" class="hero-cta" data-reveal data-reveal-delay="2">Explore the dashboard →</a>
@@ -94,7 +98,20 @@
       </div>
 
       <div id="hero-map-wrap" data-reveal data-reveal-delay="1" data-motion-group>
-        <div id="hero-map" aria-live="polite"></div>
+        <div id="hero-map" class="is-map-loading" aria-live="polite" aria-busy="true">
+          <div class="hero-map-placeholder" aria-hidden="true">
+            <svg
+              class="hero-map-placeholder-svg"
+              viewBox="0 0 960 520"
+              preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg"
+              role="presentation"
+            >
+              <g class="hero-map-placeholder-states"></g>
+            </svg>
+            <span class="hero-map-shimmer"></span>
+          </div>
+        </div>
       </div>
     </div>
     </main>
@@ -106,7 +123,7 @@
   </section>
 
   <div class="food-divider" data-reveal aria-hidden="true">
-    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" decoding="async" />
+    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" loading="lazy" decoding="async" />
   </div>
 
   <section id="stats" class="home-stats" data-cursive-section aria-label="Food access statistics">
@@ -151,7 +168,7 @@
   </section>
 
   <div class="food-divider" data-reveal aria-hidden="true">
-    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" decoding="async" />
+    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" loading="lazy" decoding="async" />
   </div>
 
   <section id="how-it-works" class="home-how" aria-labelledby="how-it-works-title">
@@ -215,7 +232,7 @@
   </section>
 
   <div class="food-divider" data-reveal aria-hidden="true">
-    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" decoding="async" />
+    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" loading="lazy" decoding="async" />
   </div>
 
   <section id="map-preview" class="home-preview" aria-labelledby="map-preview-title">
@@ -229,12 +246,24 @@
           SNAP, pantries, meals, WIC · Food-access gradient · NC bus routes in your search radius
         </p>
       </header>
-      <div id="map-preview-mount" class="home-preview-mount" data-reveal data-reveal-delay="1" data-motion-group aria-label="Static preview of the Provide food access explorer"></div>
+      <div id="map-preview-mount" class="home-preview-mount" data-reveal data-reveal-delay="1" data-motion-group aria-label="Static preview of the Provide food access explorer">
+        <div class="explorer-preview-shell">
+          <img
+            src="assets/explorer-preview.png"
+            alt="Provide explorer preview — Charlotte ZIP 28202 with SNAP, pantries, meals, WIC, and food-access layers"
+            class="explorer-preview-image"
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
     </div>
   </section>
 
   <div class="food-divider" data-reveal aria-hidden="true">
-    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" decoding="async" />
+    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" loading="lazy" decoding="async" />
   </div>
 
   <section id="reach" class="home-reach" data-cursive-section aria-label="Provide reach statistics">
@@ -286,7 +315,7 @@
   </section>
 
   <div class="food-divider" data-reveal aria-hidden="true">
-    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" decoding="async" />
+    <img src="food-divider.svg" alt="" class="food-divider-img" width="1200" height="96" loading="lazy" decoding="async" />
   </div>
 
   <section id="closing" class="home-closing" aria-label="Provide closing">
@@ -311,16 +340,14 @@
   </section>
 
   <script defer src="https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.min.js"></script>
+  <script defer src="lenis-scroll.js"></script>
   <script defer src="smooth-motion.js"></script>
   <script defer src="scroll-reveal.js"></script>
   <script defer src="typewriter.js"></script>
   <script defer src="cursive-text.js"></script>
-  <script defer src="hero-map.js"></script>
-  <script defer src="map-preview.js"></script>
+  <script defer src="hero-map-loader.js"></script>
   <script defer src="stat-tilt.js"></script>
-  <script defer src="data-sources.js"></script>
   <script defer src="home-nearby.js"></script>
 </body>
 </html>

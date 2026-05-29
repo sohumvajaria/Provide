@@ -2,13 +2,32 @@
   function initOffscreenMotionPause() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const groups = document.querySelectorAll('[data-motion-group]');
+    const groups = [...document.querySelectorAll('[data-motion-group]')].filter(
+      (el) => !el.closest('#hero')
+    );
     if (!groups.length) return;
+
+    const pending = new Map();
+    let frameId = 0;
+
+    function flushMotionPause() {
+      frameId = 0;
+      pending.forEach((isPaused, target) => {
+        target.classList.toggle('motion-paused', isPaused);
+      });
+      pending.clear();
+    }
+
+    function queueMotionPause(target, isPaused) {
+      pending.set(target, isPaused);
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(flushMotionPause);
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          entry.target.classList.toggle('motion-paused', !entry.isIntersecting);
+          queueMotionPause(entry.target, !entry.isIntersecting);
         });
       },
       { rootMargin: '100px', threshold: 0 }
@@ -33,28 +52,60 @@
     };
   }
 
+  function isScrolling() {
+    return document.documentElement.classList.contains('is-scrolling');
+  }
+
   window.ProvideMotion = {
     bindRafPointer,
     initOffscreenMotionPause,
+    isScrolling,
   };
 
   function initScrollPerf() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     let scrollEndTimer = 0;
+    let scrollFrameId = 0;
+    let isScrollActive = false;
     const root = document.documentElement;
 
-    window.addEventListener(
-      'scroll',
-      () => {
+    function markScrolling() {
+      scrollFrameId = 0;
+      if (!isScrollActive) {
+        isScrollActive = true;
         root.classList.add('is-scrolling');
-        window.clearTimeout(scrollEndTimer);
-        scrollEndTimer = window.setTimeout(() => {
-          root.classList.remove('is-scrolling');
-        }, 140);
+      }
+    }
+
+    function onScroll() {
+      if (!scrollFrameId) {
+        scrollFrameId = window.requestAnimationFrame(markScrolling);
+      }
+
+      window.clearTimeout(scrollEndTimer);
+      scrollEndTimer = window.setTimeout(() => {
+        isScrollActive = false;
+        root.classList.remove('is-scrolling');
+      }, 140);
+    }
+
+    if (window.ProvideLenis?.onScroll) {
+      window.ProvideLenis.onScroll(onScroll);
+      return;
+    }
+
+    window.addEventListener(
+      'provide:lenis-ready',
+      () => {
+        window.ProvideLenis.onScroll(onScroll);
       },
-      { passive: true }
+      { once: true }
     );
+
+    if (typeof Lenis === 'undefined') {
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
   }
 
   function init() {
@@ -63,7 +114,7 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
     init();
   }

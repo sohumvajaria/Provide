@@ -9,7 +9,8 @@
     "refresh-food-sources": "node scripts/refresh-food-sources.mjs",
     "test-charlotte-food": "node scripts/test-charlotte-food.mjs",
     "prepare-food-desert": "node scripts/prepare-food-desert.mjs",
-    "refresh-gtfs": "node scripts/refresh-gtfs.mjs"
+    "refresh-gtfs": "node scripts/refresh-gtfs.mjs",
+    "capture-explorer-preview": "node scripts/capture-explorer-preview.mjs"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@mapbox/geojson-rewind": "^0.5.2",
     "adm-zip": "^0.5.17",
     "csv-parse": "^6.2.1",
+    "lenis": "^1.3.23",
     "pdfjs-dist": "^5.6.205",
     "shapefile": "^0.6.6",
     "xlsx": "^0.18.5"

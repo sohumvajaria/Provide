@@ -98,6 +98,9 @@ function fadeInCursive(el, font) {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           svg.style.opacity = '1';
+          if (el.closest('#hero')) {
+            el.classList.add('is-cursive-ready');
+          }
         });
       });
 
@@ -120,6 +123,9 @@ function showCursiveInstant(el, font) {
   svg.style.opacity = '1';
   svg.style.transition = '';
   el.classList.remove('is-loading');
+  if (el.closest('#hero')) {
+    el.classList.add('is-cursive-ready');
+  }
 }
 
 function emitHeroCursiveStart() {
@@ -141,6 +147,9 @@ function runCursiveAnimation(el, font) {
     const glyphs = getGlyphs(el);
     if (glyphs) glyphs.innerHTML = '';
     setCursiveFallback(el);
+    if (el.closest('#hero')) {
+      el.classList.add('is-cursive-ready');
+    }
   });
 }
 

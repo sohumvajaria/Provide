@@ -4,6 +4,47 @@
  */
 (function initHomeNearbyCount() {
   const MILES = 5;
+  const DATA_SOURCES_SRC = 'data-sources.js';
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[src="${src}"]`);
+      if (existing) {
+        if (existing.dataset.loaded === 'true') {
+          resolve();
+          return;
+        }
+        existing.addEventListener('load', () => resolve(), { once: true });
+        existing.addEventListener('error', () => reject(new Error(`Failed to load ${src}`)), {
+          once: true,
+        });
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        script.dataset.loaded = 'true';
+        resolve();
+      };
+      script.onerror = () => reject(new Error(`Failed to load ${src}`));
+      document.head.appendChild(script);
+    });
+  }
+
+  function scheduleDeferred(task) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (typeof requestIdleCallback === 'function') {
+          requestIdleCallback(task, { timeout: 4000 });
+        } else {
+          window.setTimeout(task, 50);
+        }
+      });
+    });
+  }
 
   function setStatus(el, text) {
     if (!el) return;
@@ -68,10 +109,20 @@
     );
   }
 
+  function start() {
+    loadScript(DATA_SOURCES_SRC)
+      .then(run)
+      .catch(() => {});
+  }
+
+  function bootstrap() {
+    scheduleDeferred(start);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run);
+    document.addEventListener('DOMContentLoaded', bootstrap, { once: true });
   } else {
-    run();
+    bootstrap();
   }
 })();
 

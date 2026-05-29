@@ -40,6 +40,7 @@ let map;
 let markersLayer = [];
 let radiusCircle = null;
 let selectedMiles = 2;
+let resourceLoadTimer = 0;
 let allResources = [];
 let searchCenter = null;
 let searchGeneration = 0;
@@ -342,7 +343,7 @@ async function reverseGeocodeZip(lat, lng) {
 async function handleMapClickToSearch(e) {
   if (!mapClickToSearchEnabled) return;
   const target = e.originalEvent?.target;
-  if (target?.closest?.('.leaflet-interactive')) return; // ignore marker/popup clicks
+  if (target?.closest?.('.leaflet-marker-pane')) return;
 
   const lat = e.latlng?.lat;
   const lng = e.latlng?.lng;
@@ -387,7 +388,13 @@ async function handleMapClickToSearch(e) {
   }
 
   const showHomeMarker = !isZipOnlyQuery(addressInput.value);
-  await runSearchAt(lat, lng, { showHomeMarker });
+  syncSearchMapCenter(lat, lng);
+  if (showHomeMarker) {
+    setHomeMarker(lat, lng);
+  } else {
+    clearHomeMarker();
+  }
+  scheduleResourceLoad(lat, lng);
 }
 
 function escapeHtml(text) {
@@ -906,9 +913,8 @@ async function runSearchAt(lat, lng, options = {}) {
     clearHomeMarker();
   }
 
-  searchCenter = { lat, lng };
+  syncSearchMapCenter(lat, lng);
   map.setView([lat, lng], 13);
-  drawRadiusCircle(lat, lng, selectedMiles);
   map.invalidateSize();
   await loadResourcesAt(lat, lng);
 }
@@ -1013,16 +1019,35 @@ function clearMarkers() {
 }
 
 function drawRadiusCircle(lat, lng, radiusMiles) {
+  const radiusMeters = radiusMiles * 1609.34;
+
   if (radiusCircle) {
-    map.removeLayer(radiusCircle);
-    radiusCircle = null;
+    radiusCircle.setLatLng([lat, lng]);
+    radiusCircle.setRadius(radiusMeters);
+    return;
   }
+
   radiusCircle = L.circle([lat, lng], {
-    radius: radiusMiles * 1609.34,
+    radius: radiusMeters,
     color: '#4ade80',
     fillOpacity: 0.05,
     weight: 1.5,
   }).addTo(map);
+}
+
+function syncSearchMapCenter(lat, lng) {
+  searchCenter = { lat, lng };
+  drawRadiusCircle(lat, lng, selectedMiles);
+  if (homeMarker) {
+    homeMarker.setLatLng([lat, lng]);
+  }
+}
+
+function scheduleResourceLoad(lat, lng) {
+  window.clearTimeout(resourceLoadTimer);
+  resourceLoadTimer = window.setTimeout(() => {
+    loadResourcesAt(lat, lng);
+  }, 200);
 }
 
 const WALK_MIN_PER_MILE = 20; // ~3 mph
@@ -1405,6 +1430,11 @@ function setSearchStatus(html) {
   }
 }
 
+function setResultsCountSearching() {
+  const countEl = document.getElementById('results-count');
+  if (countEl) countEl.textContent = 'Searching…';
+}
+
 function showResultsMessage(html, options = {}) {
   const hideStats = options.hideStats !== false;
   const list = document.getElementById('results-list');
@@ -1417,6 +1447,10 @@ function showResultsMessage(html, options = {}) {
   }
 
   const placeholder = document.getElementById('results-placeholder');
+  if (!placeholder) {
+    setSearchStatus(html);
+    return;
+  }
   placeholder.innerHTML = html;
   placeholder.style.display = 'block';
   list.innerHTML = '';
@@ -1448,7 +1482,7 @@ function renderResultsPanel(visibleEntries) {
   }
 
   setSearchStatus('');
-  placeholder.style.display = 'none';
+  if (placeholder) placeholder.style.display = 'none';
   list.innerHTML = '';
 
   const fragment = document.createDocumentFragment();
@@ -1551,35 +1585,40 @@ function renderAll() {
 async function loadResourcesAt(lat, lng) {
   const generation = ++searchGeneration;
 
+  searchCenter = { lat, lng };
   setLoading(true);
-  clearMarkers();
-  allResources = [];
-  applyStatsCounts(countResourcesByCategory([]));
-  document.getElementById('detail-panel').classList.add('hidden');
+  setResultsCountSearching();
+  document.getElementById('detail-panel')?.classList.add('hidden');
 
-  let resources = [];
   try {
+    if (!window.ProvideDataSources?.fetchAllResources) {
+      throw new Error('ProvideDataSources unavailable');
+    }
+
     const result = await window.ProvideDataSources.fetchAllResources(
       lat,
       lng,
       selectedMiles
     );
+
     if (generation !== searchGeneration) return;
-    resources = result.resources;
+
+    allResources = Array.isArray(result?.resources) ? result.resources : [];
+    renderAll();
   } catch {
     if (generation !== searchGeneration) return;
-    setLoading(false);
+
+    clearMarkers();
+    allResources = [];
+    applyStatsCounts(countResourcesByCategory([]));
     showResultsMessage(
       '<p>Could not load map data. Please refresh and try again.</p>'
     );
-    return;
+  } finally {
+    if (generation === searchGeneration) {
+      setLoading(false);
+    }
   }
-
-  if (generation !== searchGeneration) return;
-
-  allResources = resources;
-  setLoading(false);
-  renderAll();
 }
 
 // ─── Loading ──────────────────────────────────────────────────
@@ -1677,8 +1716,8 @@ document.querySelectorAll('.radius-btn').forEach((btn) => {
     btn.classList.add('active');
     selectedMiles = parseInt(btn.dataset.miles, 10);
     if (searchCenter) {
-      drawRadiusCircle(searchCenter.lat, searchCenter.lng, selectedMiles);
-      loadResourcesAt(searchCenter.lat, searchCenter.lng);
+      syncSearchMapCenter(searchCenter.lat, searchCenter.lng);
+      scheduleResourceLoad(searchCenter.lat, searchCenter.lng);
       return;
     }
     if (allResources.length) renderAll();

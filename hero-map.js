@@ -3,9 +3,56 @@ const US_ATLAS_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
 
 let heroMapResizeTimer = null;
 let usTopologyCache = null;
+let heroMapResizeBound = false;
+let heroMapInitStarted = false;
 
 function scrollToExplorer() {
   window.location.href = 'explorer.html';
+}
+
+function setHeroMapLoading(isLoading) {
+  const container = document.getElementById('hero-map');
+  if (!container) return;
+  container.classList.toggle('is-map-loading', isLoading);
+  container.setAttribute('aria-busy', isLoading ? 'true' : 'false');
+}
+
+function clearHeroMapPlaceholder(container) {
+  const placeholder = container.querySelector('.hero-map-placeholder');
+  if (placeholder) placeholder.remove();
+}
+
+function getHeroMapDimensions(container) {
+  const width = container.clientWidth || 640;
+  const height = container.clientHeight || 520;
+  return { width, height };
+}
+
+function buildHeroMapProjection(us, width, height) {
+  const projection = d3.geoAlbersUsa().translate([width / 2, height / 2]).scale(1);
+  const path = d3.geoPath().projection(projection);
+  const states = topojson.feature(us, us.objects.states).features;
+  projection.fitExtent(
+    [[width * 0.06, height * 0.1], [width * 0.94, height * 0.9]],
+    { type: 'FeatureCollection', features: states }
+  );
+  return { projection, path, states };
+}
+
+function buildPlaceholderPreview(container, us) {
+  const statesGroup = container.querySelector('.hero-map-placeholder-states');
+  if (!statesGroup) return;
+
+  const { width, height } = getHeroMapDimensions(container);
+  const { path, states } = buildHeroMapProjection(us, width, height);
+
+  statesGroup.replaceChildren();
+  states.forEach((feature) => {
+    const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathEl.setAttribute('class', 'hero-map-placeholder-state');
+    pathEl.setAttribute('d', path(feature));
+    statesGroup.appendChild(pathEl);
+  });
 }
 
 function buildHeroMap(container, us) {
@@ -19,8 +66,7 @@ function buildHeroMap(container, us) {
     container.appendChild(tooltip);
   }
 
-  const width = container.clientWidth || 640;
-  const height = container.clientHeight || 520;
+  const { width, height } = getHeroMapDimensions(container);
   let pendingTooltip = null;
 
   const positionTooltip = window.ProvideMotion
@@ -61,14 +107,7 @@ function buildHeroMap(container, us) {
   const mapG = svg.append('g').attr('class', 'hero-states');
   const dotsG = svg.append('g').attr('class', 'hero-dots');
 
-  const projection = d3.geoAlbersUsa().translate([width / 2, height / 2]).scale(1);
-  const path = d3.geoPath().projection(projection);
-  const states = topojson.feature(us, us.objects.states).features;
-
-  projection.fitExtent(
-    [[width * 0.06, height * 0.1], [width * 0.94, height * 0.9]],
-    { type: 'FeatureCollection', features: states }
-  );
+  const { path, states } = buildHeroMapProjection(us, width, height);
 
   const points = [];
   states.forEach((f) => {
@@ -128,13 +167,17 @@ function buildHeroMap(container, us) {
         scrollToExplorer();
       }
     });
+
+  clearHeroMapPlaceholder(container);
+  setHeroMapLoading(false);
 }
 
-function initHeroMap() {
+function renderHeroMap() {
   const container = document.getElementById('hero-map');
   if (!container || typeof d3 === 'undefined' || typeof topojson === 'undefined') return;
 
   if (usTopologyCache) {
+    buildPlaceholderPreview(container, usTopologyCache);
     buildHeroMap(container, usTopologyCache);
     return;
   }
@@ -142,17 +185,35 @@ function initHeroMap() {
   d3.json(US_ATLAS_URL)
     .then((us) => {
       usTopologyCache = us;
-      buildHeroMap(container, us);
+      buildPlaceholderPreview(container, usTopologyCache);
+      buildHeroMap(container, usTopologyCache);
     })
     .catch(() => {
+      setHeroMapLoading(false);
+      clearHeroMapPlaceholder(container);
       container.innerHTML =
         '<p class="hero-map-fallback">Map unavailable — <a href="explorer.html">open the explorer</a> to find food resources.</p>';
     });
 }
 
-initHeroMap();
+function bindHeroMapResize() {
+  if (heroMapResizeBound) return;
+  heroMapResizeBound = true;
 
-window.addEventListener('resize', () => {
-  clearTimeout(heroMapResizeTimer);
-  heroMapResizeTimer = setTimeout(initHeroMap, 280);
-});
+  window.addEventListener('resize', () => {
+    clearTimeout(heroMapResizeTimer);
+    heroMapResizeTimer = window.setTimeout(renderHeroMap, 280);
+  });
+}
+
+function initHeroMap() {
+  const container = document.getElementById('hero-map');
+  if (!container || heroMapInitStarted) return;
+  heroMapInitStarted = true;
+
+  setHeroMapLoading(true);
+  bindHeroMapResize();
+  renderHeroMap();
+}
+
+window.ProvideHeroMap = { init: initHeroMap };
