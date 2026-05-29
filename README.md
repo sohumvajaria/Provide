@@ -2,7 +2,7 @@
 
 **Food access intelligence for North Carolina.** Local today. Nationwide tomorrow.
 
-**Live (GitHub Pages):** [sohumvajaria.github.io/charlotte-food-access](https://sohumvajaria.github.io/charlotte-food-access/) · **Repo:** [github.com/sohumvajaria/charlotte-food-access](https://github.com/sohumvajaria/charlotte-food-access)
+**Live Link:** https://provide-nc.org/ · **Repo:** [github.com/sohumvajaria/charlotte-food-access](https://github.com/sohumvajaria/charlotte-food-access)
 
 Custom domain planned; for now the app is hosted from this repository.
 
@@ -164,6 +164,5 @@ Made with ❤️ — Alan Cai NCSSM '27, Matthew Gervescu Ballantyne Ridge '28, 
 
 ## Links
 
-- **Live site (GitHub Pages):** [sohumvajaria.github.io/charlotte-food-access](https://sohumvajaria.github.io/charlotte-food-access/) — enable under repo **Settings → Pages** if needed
+- **Live site:** [[sohumvajaria.github.io/charlotte-food-access](https://sohumvajaria.github.io/charlotte-food-access/)](https://provide-nc.org/)
 - **Source:** [github.com/sohumvajaria/charlotte-food-access](https://github.com/sohumvajaria/charlotte-food-access)
-- **Outreach context:** `PROVIDE_CONTEXT.md` (update domain references there when you register one)
