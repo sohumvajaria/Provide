@@ -2,7 +2,7 @@
 
 **Food access intelligence for North Carolina.** Local today. Nationwide tomorrow.
 
-**Live Link:** https://provide-nc.org/ · **Repo:** [github.com/sohumvajaria/charlotte-food-access](https://github.com/sohumvajaria/charlotte-food-access)
+**Live Link:** https://provide-nc.org/ · **Repo:** (https://github.com/sohumvajaria/Provide)
 
 Custom domain planned; for now the app is hosted from this repository.
 
@@ -165,4 +165,4 @@ Made with ❤️ — Alan Cai NCSSM '27, Matthew Gervescu Ballantyne Ridge '28, 
 ## Links
 
 - **Live site:** (https://provide-nc.org/)
-- **Source:** [github.com/sohumvajaria/charlotte-food-access](https://github.com/sohumvajaria/charlotte-food-access)
+- **Source:** (https://github.com/sohumvajaria/Provide)
